@@ -4,8 +4,6 @@ import { Search,ShoppingCartOutlined } from "@mui/icons-material"
 import { Badge } from '@mui/material';
 const Container = styled.div`
         height: 60px;
-      
-        
 ` ;
 const Wrapper = styled.div`
         padding: 10px 20px;
@@ -86,7 +84,7 @@ const Navbar = () => {
                     <MenuItem>REGISTER</MenuItem>
                     <MenuItem>SIGN IN</MenuItem>
                     <MenuItem>
-                        <Badge badgeContent={1} color="primary">
+                        <Badge badgeContent={0} color="primary">
                         <ShoppingCartOutlined/>
                         </Badge>
                     </MenuItem>
