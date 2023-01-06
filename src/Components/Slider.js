@@ -1,6 +1,7 @@
 import { ArrowLeftOutlined, ArrowRightOutlined } from '@mui/icons-material';
 import React from 'react'
 import styled from 'styled-components'
+import image1 from './Images/image1.jpg'
 
 const Container = styled.div`
         width:100%;
@@ -40,6 +41,8 @@ const InfoContainer = styled.div`
         flex:1;
 `;
 const Image = styled.img`
+        width:500px;
+        height:500px;       
 `;
 
 
@@ -57,10 +60,10 @@ const Slider = () => {
 
                <Wrapper>
                     <ImgContainer>
-                         <Image src="https://www.ulcdn.net/media/furniture-stores/bangalore/yelahanka/Yelahanka_store_image.jpg?1658483963"/>
+                         <Image src={image1}/>
                     </ImgContainer>
                     <InfoContainer>
-
+                        
                     </InfoContainer>
 
                </Wrapper>
