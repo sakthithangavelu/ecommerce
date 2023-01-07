@@ -1,8 +1,8 @@
 import { ArrowLeftOutlined, ArrowRightOutlined} from '@mui/icons-material';
 import React from 'react'
 import styled from 'styled-components'
-import image1 from './Images/image1.jpg'
-
+import { sliderItems } from '../data';
+import { useState } from 'react';
 const Container = styled.div`
         width:100%;
         height: 100vh;
@@ -27,11 +27,12 @@ const Arrow = styled.div`
         margin:auto;
         cursor:pointer;
         opacity:0.6;
+        z-index: 2;  //The z-index property specifies the stack order of an element. An element with greater stack order is always in front of an element with a lower stack order.
 `;
 const Wrapper = styled.div`
         height : 100%;
         display: flex;
-        transform:translateX(-200px)
+        transform:translateX(${props => props.slideIndex * -100}vw)//The transform property applies a 2D or 3D transformation to an element. This property allows you to rotate, scale, move, skew, etc., elements.
 
 `;
 const Slide = styled.div`
@@ -71,8 +72,17 @@ const Button = styled.button`
 
 
 const Slider = () => {
+        //useState Hook
+        const [slideIndex, setSlideIndex] = useState(0);
+        //Setting direction for the arrows
+        const handleClick = (direction) => {
+                if(direction==="left"){
+                        setSlideIndex(slideIndex>0 ? slideIndex-1 :2)
+                } else {
+                        setSlideIndex(slideIndex < 2 ? slideIndex +1 : 0)
+                }
 
-        const handleClick = (direction) => {}
+        }
     return (
         <Container>
             {/* passing props in styled components */}
@@ -81,41 +91,19 @@ const Slider = () => {
                 <ArrowLeftOutlined />
             </Arrow>
 
-               <Wrapper>
-
-                 <Slide bg="f5fafd">
+               <Wrapper slideIndex={slideIndex}>
+                {sliderItems.map((item) => (
+                 <Slide bg={item.bg}>
                     <ImgContainer>
-                         <Image src={image1}/>
+                         <Image src={item.img}/>
                     </ImgContainer>
                     <InfoContainer>
-                        <Title>Festive Sale 2023...!!</Title>
-                        <Desc>We specialize in the manufacture of household furniture,outdoor and office furniture.We use the very best materials available including teak woods.</Desc>
+                        <Title>{item.title}</Title>
+                        <Desc>{item.desc}</Desc>
                         <Button>Shop Now</Button>
                     </InfoContainer>
                     </Slide>
-
-                    <Slide bg="fcf1ed">
-                    <ImgContainer>
-                         <Image src={image1}/>
-                    </ImgContainer>
-                    <InfoContainer>
-                        <Title>Household Furnitures ...!!!!!</Title>
-                        <Desc>We specialize in the manufacture of household furniture,outdoor and office furniture.We use the very best materials available including teak woods.</Desc>
-                        <Button>Shop Now</Button>
-                    </InfoContainer>
-                    </Slide>
-                    
-
-                    <Slide bg="fbf0f4">
-                    <ImgContainer>
-                         <Image src={image1}/>
-                    </ImgContainer>
-                    <InfoContainer>
-                        <Title>Office Furnitures...!!</Title>
-                        <Desc>We specialize in the manufacture of household furniture,outdoor and office furniture.We use the very best materials available including teak woods.</Desc>
-                        <Button>Shop Now</Button>
-                    </InfoContainer>
-                    </Slide>
+                ))}
                </Wrapper>
 
             <Arrow direction="right" onClick={()=>handleClick("right")}>
