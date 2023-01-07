@@ -76,7 +76,7 @@ const Navbar = () => {
 
 
                 <Center>
-                    <Logo>ShopKart</Logo>
+                    <Logo>BrOwN WoOdS</Logo>
                 </Center>
 
 
