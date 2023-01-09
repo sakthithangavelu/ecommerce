@@ -2,6 +2,7 @@ import styled from "styled-components"
 import Navbar from "../Components/Navbar";
 import Announcement from "../Components/Announcement";
 import Footer from "../Components/Footer";
+import {Add,Remove} from "@mui/icons-material"
 
 
 const Container = styled.div`
@@ -32,6 +33,44 @@ const Price = styled.span`
       font-size:40px;
 `;
 
+const AddContainer = styled.div`
+        display: flex;
+        align-items:center;
+        width:50%;
+        justify-content:space-between;
+`;
+const AmountContainer= styled.div`
+        display: flex;
+        align-items:center;
+        font-weight:700;
+`;
+const Amount = styled.span`
+        width: 30px;
+        height:30px;
+        border-radius:10px;
+        display: flex;
+        align-items:center;
+        justify-content:center;
+        margin: 0px 5px;
+        border: 2px solid teal;
+        
+`;
+const Button = styled.button`
+        padding: 15px;
+        border: 2px solid teal;
+        background-color: white;
+        cursor:pointer;
+
+
+        &:hover{
+          background-color: teal;
+          color: white;
+        }
+        
+`;
+
+
+
 const Product = () => {
   return (
     <Container>
@@ -48,12 +87,15 @@ const Product = () => {
             <Title>Coffee Table</Title>
             <Desc>Blane Square Solid Wood Coffee Table In Teak Finish</Desc>
             <Price>Rs.4,000/-</Price>
-            <FilterContainer>
-              <Filter>
-                <FilterTitle>Furniture Type</FilterTitle>
-                <FilterType></FilterType>
-              </Filter>
-            </FilterContainer>
+
+            <AddContainer>
+              <AmountContainer>
+                <Remove/>
+                <Amount>1</Amount>
+                <Add/>
+              </AmountContainer>
+              <Button>ADD TO CART</Button>
+            </AddContainer>
           </InfoContainer>
 
         </Wrapper>
