@@ -1,0 +1,32 @@
+{
+  "SignIn": [
+    {
+      "fname": "Sakthi",
+      "lname": "Thangavelu",
+      "email": "Sakthi@aspiresys.com",
+      "password": "qwertyuiop",
+      "id": 1
+    },
+    {
+      "fname": "Vel",
+      "lname": "Thangavelu",
+      "email": "Vel@aspiresys.com",
+      "password": "zxcvbnmghjk",
+      "id": 2
+    },
+    {
+      "fname": "s",
+      "lname": "s",
+      "email": "s@ss",
+      "password": "sss",
+      "id": 3
+    },
+    {
+      "fname": "Maha",
+      "lname": "Lakshmi",
+      "email": "Maha@asojcb",
+      "password": "djbkjdbjsbxs",
+      "id": 4
+    }
+  ]
+}

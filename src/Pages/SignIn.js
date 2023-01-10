@@ -1,4 +1,6 @@
+import { useState } from "react";
 import styled from "styled-components";
+import {Link} from "react-router-dom";
 
 const Container = styled.div`
         width: 100vw;
@@ -31,32 +33,54 @@ const Input = styled.input`
         padding: 10px;
 `;
 const Button = styled.button`
-        width: 40%;
+        width: 100%;
         border:none;
         padding:15px 20px;
         background-color:teal;
         color:white;
         cursor: pointer;
-        margin-bottom:10px;
-`;
-const Link = styled.a`
-        margin: 5px 0px;
-        font-size: 13px;
-        text-decoration: underline;
-        cursor: pointer;
+        margin-bottom:5px;
 `;
 
 const SignIn = () => {
+
+const [email,emailChange] = useState("");
+const [password,passwordChange] = useState("");
+
+const ProceedLogin = (e) => {
+        if(validate()){
+        e.preventDefault();
+        //implementing login functionalities
+        console.log("proceed");
+        }
+        
+        
+}
+const validate = () => {
+        let result =true;
+        if(email === '' || email === null){
+                result= false;
+                alert("Invalid Username");
+        }
+        if(password === '' || password === null){
+                result= false;
+                alert("Invalid Password");
+        }
+        return result;
+
+}
+
   return (
+       
     <Container>
     <Wrapper>
         <Title>SIGN IN</Title>
-        <Form>
-            <Input placeholder="User name"/>
-            <Input placeholder="Password"/>
-            <Button>LOGIN</Button>
-            <Link>Forgot Password?</Link>
-            <Link>Create a new account.</Link>
+        <Form onSubmit={ProceedLogin}>
+            <Input value={email} onChange={e => emailChange(e.target.value)} type="email" placeholder="Email" required/>
+            <Input value={password} onChange={e => passwordChange(e.target.value)} type="password" placeholder="Password" required/>
+            <Button type="submit">LOGIN</Button>
+            <Link to="/Register"><Button>NEW USER?</Button></Link>
+            
        </Form>
     </Wrapper>
 </Container>

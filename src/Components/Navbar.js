@@ -2,6 +2,8 @@ import React from 'react'
 import styled from 'styled-components'
 import { Search,ShoppingCartOutlined } from "@mui/icons-material"
 import { Badge } from '@mui/material';
+import { Link } from 'react-router-dom';
+
 const Container = styled.div`
         height: 60px;
 ` ;
@@ -10,9 +12,6 @@ const Wrapper = styled.div`
         display: flex;
         align-items : center;
         justify-content: space-between;
-        /* border-top: 2px solid;
-        border-bottom: 2px solid;
-        padding: 10px; */
         background-color:#e3e6e5;
 `;
 //Left Portion of Page
@@ -67,25 +66,27 @@ const Navbar = () => {
         <Container>
             <Wrapper>
 
-                <Left><Language>EN</Language>
+                <Left>
                 <SearchContainer>
-                    <Input/>
+                <Language>SEARCH:</Language> 
+                <Input/>
                     <Search style={{color:"gray",fontSize:15}}/>
-                </SearchContainer>
+                </SearchContainer >
                 </Left>
 
 
                 <Center>
                     <Logo>BrOwN WoOdS</Logo>
                 </Center>
-
+                
 
                 <Right>
-                    <MenuItem>REGISTER</MenuItem>
-                    <MenuItem>SIGN IN</MenuItem>
+                
+                    <Link to='Register'><MenuItem>REGISTER</MenuItem></Link>
+                    <Link to='SignIn'><MenuItem>SIGN IN</MenuItem></Link>
                     <MenuItem>
                         <Badge badgeContent={0} color="primary">
-                        <ShoppingCartOutlined/>
+                        <Link to='Cart'><ShoppingCartOutlined/></Link>
                         </Badge>
                     </MenuItem>
                 </Right>

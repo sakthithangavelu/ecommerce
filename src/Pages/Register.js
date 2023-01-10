@@ -1,4 +1,7 @@
+import { useState } from "react";
+import axios from "axios";
 import styled from "styled-components";
+import { useNavigate } from "react-router-dom";
 
 
 const Container = styled.div`
@@ -9,7 +12,6 @@ const Container = styled.div`
         background-size: cover;
         align-items: center;
         justify-content:center;
-        
 `;
 const Wrapper = styled.div`
         padding: 20px;
@@ -36,7 +38,7 @@ const Agreement = styled.span`
         margin:20px 0px;
 `;
 const Button = styled.button`
-        width: 40%;
+        width: 100%;
         border:none;
         padding:15px 20px;
         background-color:teal;
@@ -44,23 +46,40 @@ const Button = styled.button`
         cursor: pointer;
 `;
 
-
 const Register = () => {
+
+const[fname,fnameChange]=useState("");
+const[lname,lnameChange]=useState("");
+const[email,emailChange]=useState("");
+const[password,passwordChange]=useState("");
+
+const navigate=useNavigate();
+        
+const handleSubmit=(e) => {
+let registerObject = {fname,lname,email,password}
+console.log(registerObject);
+e.preventDefault();
+
+        axios.post("http://localhost:8000/SignIn",registerObject).then((res)=>{
+                alert("Registered Successfully");
+                navigate("/SignIn");
+        }).catch((err)=>{
+                alert("Registration Failed:"+err.message);
+        });
+}      
   return (
     <Container>
         <Wrapper>
             <Title>Create an account</Title>
-            <Form>
-                <Input placeholder="First name"/>
-                <Input placeholder="Last name"/>
-                <Input placeholder="User name"/>
-                <Input placeholder="Email"/>
-                <Input placeholder="Password"/>
-                <Input placeholder="Confirm password"/>
+            <Form onSubmit={handleSubmit}>
+                <Input value={fname} onChange={e=>fnameChange(e.target.value)} type="text" placeholder="First name" required/>
+                <Input value={lname} onChange={e=>lnameChange(e.target.value)}  type="text" placeholder="Last name" required/>
+                <Input value={email} onChange={e=>emailChange(e.target.value)} type="email" placeholder="Email" required/>
+                <Input value={password} onChange={e=>passwordChange(e.target.value)} type="password" placeholder="Password" required/>
                 <Agreement>By Creating an account ,I consent to the processing of my personal 
-                data in accordance with the <b>Privacy Policy</b>
+                data in accordance with the <b>Privacy Policy</b>.
                 </Agreement>
-                <Button>CREATE</Button>
+                <Button type="submit">CREATE</Button>
            </Form>
         </Wrapper>
     </Container>
