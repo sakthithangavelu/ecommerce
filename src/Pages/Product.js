@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import Navbar from "../Components/Navbar";
+import Navigationbar from "../Components/NavigationBar";
 import Announcement from "../Components/Announcement";
 import Footer from "../Components/Footer";
 import {Add,Remove} from "@mui/icons-material"
@@ -75,7 +75,7 @@ const Product = () => {
   return (
     <Container>
       <Announcement/>
-      <Navbar/>
+      <Navigationbar/>
 
         <Wrapper>
 

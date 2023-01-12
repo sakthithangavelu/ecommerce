@@ -139,12 +139,12 @@ const Cart = () => {
                 <Top>
                     <TopButton>Continue Shopping</TopButton>
                     <TopTexts>
-                        <TopText>Shopping Bag(2)</TopText>
+                        <TopText>Shopping Bag(0)</TopText>
                         <TopText>Whishlist(0)</TopText>
                     </TopTexts>
                     <TopButton type="filled">Check Out</TopButton>
                 </Top>
-                <Bottom>
+                {/* <Bottom>
                     <Info>
 
                         <Product>
@@ -193,8 +193,7 @@ const Cart = () => {
                         </SummaryItem>
                         <Button>Check Out</Button>
                     </Summary>
-
-                </Bottom>
+                </Bottom> */}
             </Wrapper>
             <Footer />
         </Container>

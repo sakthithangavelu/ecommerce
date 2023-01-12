@@ -41,11 +41,11 @@ const Button = styled.button`
 const CategoryItem = ({item}) => {
   return (
     <Container>
-            <Image src={item.img}/>
+            {/* <Image src={item.img}/>
             <Info>
                 <Title>{item.title}</Title>
                 <Button>Shop Now</Button>
-            </Info>
+            </Info> */}
     </Container>
   )
 }

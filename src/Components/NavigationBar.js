@@ -2,8 +2,8 @@ import React from 'react'
 import styled from 'styled-components'
 import { Search,ShoppingCartOutlined } from "@mui/icons-material"
 import { Badge } from '@mui/material';
-import { Link } from 'react-router-dom';
-
+import { Link, useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
 const Container = styled.div`
         height: 60px;
 ` ;
@@ -61,7 +61,16 @@ const MenuItem = styled.div`
 
 
 
-const Navbar = () => {
+const NavigationBar = () => {
+
+const usenavigation = useNavigate();
+  useEffect(() => {
+                  let email=sessionStorage.getItem('email');
+                  if(email==='' || email === null){
+                        usenavigation('/SignIn');
+                  }
+
+                  },[]);
     return (
         <Container>
             <Wrapper>
@@ -74,13 +83,16 @@ const Navbar = () => {
                 </SearchContainer > */}
                 </Left>
 
+
                 <Center>
                     <Logo>BrOwN WoOdS</Logo>
                 </Center>
-        
+                
+
                 <Right>
-                    <Link to='Register'><MenuItem>REGISTER</MenuItem></Link>
-                    <Link to='SignIn'><MenuItem>SIGN IN</MenuItem></Link>
+                
+                    <Link to='/'><MenuItem>HOME</MenuItem></Link>
+                    <Link to='/SignIn'><MenuItem>LOGOUT</MenuItem></Link>
                     <MenuItem>
                         <Badge badgeContent={0} color="primary">
                         <Link to='Cart'><ShoppingCartOutlined/></Link>
@@ -92,4 +104,4 @@ const Navbar = () => {
     )
 }
 
-export default Navbar
+export default NavigationBar

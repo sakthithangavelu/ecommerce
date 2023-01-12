@@ -2,7 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
-
+import Announcement from "../Components/Announcement";
 
 const Container = styled.div`
         width: 100vw;
@@ -75,7 +75,7 @@ e.preventDefault();
                 <Input value={fname} onChange={e=>fnameChange(e.target.value)} type="text" placeholder="First name" required/>
                 <Input value={lname} onChange={e=>lnameChange(e.target.value)}  type="text" placeholder="Last name" required/>
                 <Input value={email} onChange={e=>emailChange(e.target.value)} type="email" placeholder="Email" required/>
-                <Input value={password} onChange={e=>passwordChange(e.target.value)} type="password" placeholder="Password" required/>
+                <Input value={password} onChange={e=>passwordChange(e.target.value)} type="password" placeholder="Password" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" required/>
                 <Agreement>By Creating an account ,I consent to the processing of my personal 
                 data in accordance with the <b>Privacy Policy</b>.
                 </Agreement>

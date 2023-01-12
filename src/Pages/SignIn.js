@@ -1,6 +1,8 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styled from "styled-components";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const Container = styled.div`
         width: 100vw;
@@ -44,47 +46,69 @@ const Button = styled.button`
 
 const SignIn = () => {
 
-const [email,emailChange] = useState("");
-const [password,passwordChange] = useState("");
+        const [email, emailChange] = useState("");
+        const [password, passwordChange] = useState("");
 
-const ProceedLogin = (e) => {
-        if(validate()){
-        e.preventDefault();
-        //implementing login functionalities
-        console.log("proceed");
-        }
-        
-        
-}
-const validate = () => {
-        let result =true;
-        if(email === '' || email === null){
-                result= false;
-                alert("Invalid Username");
-        }
-        if(password === '' || password === null){
-                result= false;
-                alert("Invalid Password");
-        }
-        return result;
+        const navigate = useNavigate();
 
-}
+        useEffect(() => {
+                sessionStorage.clear();
+        }, []);
 
-  return (
-       
-    <Container>
-    <Wrapper>
-        <Title>SIGN IN</Title>
-        <Form onSubmit={ProceedLogin}>
-            <Input value={email} onChange={e => emailChange(e.target.value)} type="email" placeholder="Email" required/>
-            <Input value={password} onChange={e => passwordChange(e.target.value)} type="password" placeholder="Password" required/>
-            <Button type="submit">LOGIN</Button>
-            <Link to="/Register"><Button>NEW USER?</Button></Link>
-            
-       </Form>
-    </Wrapper>
-</Container>
-  )
+        const ProceedLogin = (e) => {
+                if (validate()) {
+                        e.preventDefault();
+                        //implementing login functionalities
+                        axios.get("http://localhost:8000/SignIn?email=" + email).then((res) => {
+                                console.log(res.data);
+                                return res.data;
+                        }).then((resp) => {
+                                console.log(resp);
+                                if (Object.keys(resp).length === 0) {
+                                        alert("Invalid Email")
+                                }
+                                else {
+                                        if (resp[0].password === password) {
+                                                alert("Login Success")
+                                                sessionStorage.setItem('email', email);
+                                                navigate("/Product");
+
+                                        }
+                                        else {
+                                                alert("Invalid Password");
+                                        }
+                                }
+                        }).catch((err) => {
+                                alert("Login Failed:" + err.message);
+                        });
+                }
+
+        }
+        const validate = () => {
+                let result = true;
+                if (email === '' || email === null) {
+                        result = false;
+                        alert("Invalid Username");
+                }
+                if (password === '' || password === null) {
+                        result = false;
+                        alert("Invalid Password");
+                }
+                return result;
+        }
+        return (
+                <Container>
+                        <Wrapper>
+                                <Title>SIGN IN</Title>
+                                <Form onSubmit={ProceedLogin}>
+                                        <Input value={email} onChange={e => emailChange(e.target.value)} type="email" placeholder="Email" required />
+                                        <Input value={password} onChange={e => passwordChange(e.target.value)} type="password" placeholder="Password" required />
+                                        <Button type="submit">LOGIN</Button>
+                                        <Link to="/Register"><Button>NEW USER?</Button></Link>
+                                </Form>
+                        </Wrapper>
+                </Container>
+        )
 }
 
 export default SignIn

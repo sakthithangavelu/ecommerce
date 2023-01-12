@@ -3,30 +3,23 @@
     {
       "fname": "Sakthi",
       "lname": "Thangavelu",
-      "email": "Sakthi@aspiresys.com",
-      "password": "qwertyuiop",
+      "email": "sakthi@aspiresys.com",
+      "password": "Sakthi@123",
       "id": 1
     },
     {
-      "fname": "Vel",
-      "lname": "Thangavelu",
-      "email": "Vel@aspiresys.com",
-      "password": "zxcvbnmghjk",
+      "fname": "Vijay",
+      "lname": "Kumar",
+      "email": "vijay@aspiresys.com",
+      "password": "Vijay@123",
       "id": 2
     },
     {
-      "fname": "s",
-      "lname": "s",
-      "email": "s@ss",
-      "password": "sss",
+      "fname": "Joy",
+      "lname": "Aspire",
+      "email": "Joy@aspiresys.com",
+      "password": "joy@aspire123",
       "id": 3
-    },
-    {
-      "fname": "Maha",
-      "lname": "Lakshmi",
-      "email": "Maha@asojcb",
-      "password": "djbkjdbjsbxs",
-      "id": 4
     }
   ]
 }
