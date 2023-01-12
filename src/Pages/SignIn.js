@@ -72,7 +72,6 @@ const SignIn = () => {
                                                 alert("Login Success")
                                                 sessionStorage.setItem('email', email);
                                                 navigate("/Product");
-
                                         }
                                         else {
                                                 alert("Invalid Password");
@@ -105,6 +104,7 @@ const SignIn = () => {
                                         <Input value={password} onChange={e => passwordChange(e.target.value)} type="password" placeholder="Password" required />
                                         <Button type="submit">LOGIN</Button>
                                         <Link to="/Register"><Button>NEW USER?</Button></Link>
+                                        <Link to="/"><Button>BACK</Button></Link>
                                 </Form>
                         </Wrapper>
                 </Container>

@@ -2,6 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Announcement from "../Components/Announcement";
 
 const Container = styled.div`
@@ -15,7 +16,7 @@ const Container = styled.div`
 `;
 const Wrapper = styled.div`
         padding: 20px;
-        width: 40%; 
+        width: 20%; 
         background-color:white ;
 `;
 const Title = styled.h1`
@@ -25,6 +26,7 @@ const Title = styled.h1`
 const Form = styled.form`
         display:flex;
         flex-wrap:wrap;
+        flex-direction:column;
 
 `;
 const Input = styled.input`
@@ -39,6 +41,7 @@ const Agreement = styled.span`
 `;
 const Button = styled.button`
         width: 100%;
+        margin-bottom:5px;
         border:none;
         padding:15px 20px;
         background-color:teal;
@@ -74,12 +77,13 @@ e.preventDefault();
             <Form onSubmit={handleSubmit}>
                 <Input value={fname} onChange={e=>fnameChange(e.target.value)} type="text" placeholder="First name" required/>
                 <Input value={lname} onChange={e=>lnameChange(e.target.value)}  type="text" placeholder="Last name" required/>
-                <Input value={email} onChange={e=>emailChange(e.target.value)} type="email" placeholder="Email" required/>
-                <Input value={password} onChange={e=>passwordChange(e.target.value)} type="password" placeholder="Password" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" required/>
+                <Input value={email} onChange={e=>emailChange(e.target.value)} type="email" placeholder="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Please enter valid email [abc@mail.com]." required/>
+                <Input value={password} onChange={e=>passwordChange(e.target.value)} type="password" placeholder="Password" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" title="Please enter valid password of length of 8 or more [Must contain a special keyword, min of 1 character from a-z,A-Z and number]." required/>
                 <Agreement>By Creating an account ,I consent to the processing of my personal 
                 data in accordance with the <b>Privacy Policy</b>.
                 </Agreement>
                 <Button type="submit">CREATE</Button>
+                <Link to="/"><Button>BACK</Button></Link>
            </Form>
         </Wrapper>
     </Container>

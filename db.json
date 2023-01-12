@@ -20,6 +20,13 @@
       "email": "Joy@aspiresys.com",
       "password": "joy@aspire123",
       "id": 3
+    },
+    {
+      "fname": "Divish",
+      "lname": "Karthick",
+      "email": "divish@aspiresys.com",
+      "password": "Divish@123",
+      "id": 4
     }
   ]
 }
