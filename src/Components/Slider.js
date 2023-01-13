@@ -57,7 +57,7 @@ const Image = styled.img`
         height:80%;       
 `;
 const Title = styled.h1`
-        font-size : 70px
+        font-size : 70px;
 `;
 const Desc = styled.p`
         margin: 50px 0px;
