@@ -84,15 +84,12 @@ const Footer = () => {
                     <Title>Useful links</Title>
                     <List>
                          <ListItem>Home</ListItem>
+                         <ListItem>Procuts</ListItem>
+                         <ListItem>Register</ListItem>
+                         <ListItem>SignIn</ListItem>
                          <ListItem>Cart</ListItem>
-                         <ListItem>Home Furnitures</ListItem>
-                         <ListItem>Office Furnitures</ListItem>
-                         <ListItem>Outdoor Furnitures</ListItem>
-                         <ListItem>My Account</ListItem>
-                         <ListItem>Order Tracking</ListItem>
-                         <ListItem>Wishlist</ListItem>
-                         <ListItem>Wishlist</ListItem>
-                         <ListItem>Terms</ListItem>
+                         <ListItem>CheckOut</ListItem>
+                         
                     </List>
             </Center>
 
