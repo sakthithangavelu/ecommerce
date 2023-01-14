@@ -1,5 +1,5 @@
 import React from 'react'
-
+import { Link } from 'react-router-dom';
 
 const Cart = (props) => {
     const {cartItems,onAdd,onRemove} = props;
@@ -51,7 +51,7 @@ const Cart = (props) => {
                 </div>
                 <hr/>
                 <div className='row'>
-                    <button onClick={()=>alert("Checking Out")}>CHECKOUT</button>
+                <Link to='/SignIn'><button>CHECKOUT</button></Link>
                 </div>
                 </>
                 

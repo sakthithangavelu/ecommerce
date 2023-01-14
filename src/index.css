@@ -35,6 +35,7 @@ a {
 }
 
 .row.center {
+  display: flex;
   align-items: center;
 }
 
@@ -47,15 +48,12 @@ a {
 }
 
 .col-2 {
-        padding:20px;
-        display:flex;
-        flex-direction: column;
-        flex-wrap:wrap;
+        flex:1;
         justify-content:space-between;
 }
 
 .block {
-  background-color: #e0e0e0;
+  background-color:#ceedb4;
   padding: 1rem;
   margin: 0.5rem;
   border-radius: 0.5rem;
@@ -73,27 +71,24 @@ button {
   font-size: 0.8rem;
   padding: 0.2rem;
   margin: 0.1rem;
-  border-radius: 0.5rem;
   border: 0.1rem #404040 solid;
   background-color: teal;
   color: white;
   width: 100%;
   cursor: pointer;
+  width: 7.5rem;
 }
-
 button.add {
-  background-color: #40c0f0;
+  background-color: teal;
   width: 1.5rem;
 }
-
 button.remove {
-  background-color: #f04040;
+  background-color: teal;
   width: 1.5rem;
 }
-
 button.badge {
-  background-color: #f04040;
+  background-color: rgb(224, 96, 96);
   border: none;
-  color: #ffffff;
+  color: black;
   width: 1.5rem;
 }

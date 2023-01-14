@@ -69,9 +69,8 @@ const SignIn = () => {
                                 }
                                 else {
                                         if (resp[0].password === password) {
-                                                alert("Login Success")
                                                 sessionStorage.setItem('email', email);
-                                                navigate("/Product");
+                                                navigate("/CartApp");
                                         }
                                         else {
                                                 alert("Invalid Password");

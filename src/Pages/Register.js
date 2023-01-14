@@ -3,7 +3,6 @@ import axios from "axios";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
-import Announcement from "../Components/Announcement";
 
 const Container = styled.div`
         width: 100vw;

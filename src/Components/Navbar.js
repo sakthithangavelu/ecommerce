@@ -1,11 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Search,ShoppingCartOutlined } from "@mui/icons-material"
-import { Badge } from '@mui/material';
 import { Link } from 'react-router-dom';
 
 const Container = styled.div`
-        height: 60px;
+        height: 25px;
 ` ;
 const Wrapper = styled.div`
         padding: 1px 1px 1px 1px ;
@@ -20,20 +18,6 @@ const Left = styled.div`
         display: flex;
         align-items : center;
 `;
-// const Language = styled.span`
-//         font-size : 14px ;
-//         cursor : pointer;
-// `;
-// const SearchContainer = styled.div`
-//         border : 0.5px solid gray;
-//         display: flex;
-//         align-items : center;
-//         margin-left: 25px;
-//         padding: 10px;
-// `;
-// const Input = styled.input`
-//         border: none;
-// `;
 
 //Center Portion of Page
 const Center = styled.div`
@@ -65,7 +49,6 @@ const Navbar = () => {
     return (
         <Container>
             <Wrapper>
-
                 <Left>
                 {/* <SearchContainer>
                 <Language>SEARCH:</Language> 
@@ -81,11 +64,6 @@ const Navbar = () => {
                 <Right>
                     <Link to='Register'><MenuItem>REGISTER</MenuItem></Link>
                     <Link to='SignIn'><MenuItem>SIGN IN</MenuItem></Link>
-                    <MenuItem>
-                        <Badge badgeContent={0} color="primary">
-                        <Link to='/CartApp'><ShoppingCartOutlined/></Link>
-                        </Badge>
-                    </MenuItem>
                 </Right>
             </Wrapper>
         </Container>

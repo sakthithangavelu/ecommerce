@@ -68,7 +68,6 @@ const Desc = styled.p`
 const Button = styled.button`
         padding: 10px;
         font-size:20px;
-        background-color:transparent ;
         cursor:pointer;
 `;
 
@@ -102,7 +101,7 @@ const Slider = () => {
                     <InfoContainer>
                         <Title>{item.title}</Title>
                         <Desc>{item.desc}</Desc>
-                       <Link to="/Product"> <Button>Shop Now</Button></Link>
+                       <Link to="/CartApp"> <Button>Shop Now</Button></Link>
                     </InfoContainer>
                     </Slide>
                 ))}

@@ -6,19 +6,15 @@ const Header = (props) => {
   return (
     <header className='row block center'>
         <div>
-            <a href='#'>
                 <h1>BrOwN WoOdS</h1>
-            </a>    
         </div>
         <div>
-           <Link to="/Cart">
-                Cart{' '} 
+        <Link to='/'><button>Home</button></Link>
+               <button> Cart{' '} 
                 {countCartItems?(
                     <button className='badge'>{countCartItems}</button>
                 ):('')
-                }
-            </Link>
-         <Link to='/SignIn'>SignIn</Link>
+                }</button>
         </div>
     </header>
   )
