@@ -101,7 +101,7 @@ const SignIn = () => {
                                 <Form onSubmit={ProceedLogin}>
                                         <Input value={email} onChange={e => emailChange(e.target.value)} type="email" placeholder="Email" required />
                                         <Input value={password} onChange={e => passwordChange(e.target.value)} type="password" placeholder="Password" required />
-                                        <Button type="submit">LOGIN</Button>
+                                        <Button type="submit">SIGN IN</Button>
                                         <Link to="/Register"><Button>NEW USER?</Button></Link>
                                         <Link to="/"><Button>BACK</Button></Link>
                                 </Form>

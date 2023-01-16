@@ -50,7 +50,7 @@ const Navbar = () => {
         <Container>
             <Wrapper>
                 <Left>
-                {/* <SearchContainer>
+                    {/* <SearchContainer>
                 <Language>SEARCH:</Language> 
                 <Input/>
                     <Search style={{color:"gray",fontSize:15}}/>
@@ -60,7 +60,7 @@ const Navbar = () => {
                 <Center>
                     <Logo>BrOwN WoOdS</Logo>
                 </Center>
-        
+
                 <Right>
                     <Link to='Register'><MenuItem>REGISTER</MenuItem></Link>
                     <Link to='SignIn'><MenuItem>SIGN IN</MenuItem></Link>

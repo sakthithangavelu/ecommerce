@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { Facebook, Twitter, Instagram,Place ,Call,Email} from "@mui/icons-material"
+import { Facebook, Twitter, Instagram, Place, Call, Email } from "@mui/icons-material"
 
 
 const Container = styled.div`
@@ -62,52 +62,52 @@ align-items:center;
 `;
 
 const Footer = () => {
-    return (
-        <Container>
-            <Left>
-                <Logo>BrOwN WoOdS</Logo>
-                <Desc>We specialize in the manufacture of household furniture,outdoor and office furniture.We use the very best materials available including teak woods.</Desc>
-                <SocialContainer>
-                    <SocialIcon>
-                        <Instagram />
-                    </SocialIcon>
-                    <SocialIcon>
-                        <Facebook />
-                    </SocialIcon>
-                    <SocialIcon>
-                        <Twitter />
-                    </SocialIcon>
-                </SocialContainer>
-            </Left>
+        return (
+                <Container>
+                        <Left>
+                                <Logo>BrOwN WoOdS</Logo>
+                                <Desc>We specialize in the manufacture of household furniture,outdoor and office furniture.We use the very best materials available including teak woods.</Desc>
+                                <SocialContainer>
+                                        <SocialIcon>
+                                                <Instagram />
+                                        </SocialIcon>
+                                        <SocialIcon>
+                                                <Facebook />
+                                        </SocialIcon>
+                                        <SocialIcon>
+                                                <Twitter />
+                                        </SocialIcon>
+                                </SocialContainer>
+                        </Left>
 
-            <Center>
-                    <Title>Useful links</Title>
-                    <List>
-                         <ListItem>Home</ListItem>
-                         <ListItem>Procuts</ListItem>
-                         <ListItem>Register</ListItem>
-                         <ListItem>SignIn</ListItem>
-                         <ListItem>Cart</ListItem>
-                         <ListItem>CheckOut</ListItem>
-                         
-                    </List>
-            </Center>
+                        <Center>
+                                <Title>Useful links</Title>
+                                <List>
+                                        <ListItem>Home</ListItem>
+                                        <ListItem>Procuts</ListItem>
+                                        <ListItem>Register</ListItem>
+                                        <ListItem>SignIn</ListItem>
+                                        <ListItem>Cart</ListItem>
+                                        <ListItem>CheckOut</ListItem>
 
-            <Right>
-                    <Title>Contact</Title>
-                    <ContactItem>
-                        {/* inline styling for a space between icon and text */}
-                    <Place style={{marginRight:"10px"}}/>  No:291,2nd main road,Siruseri,Chennai - 600 130  
-                    </ContactItem>
-                    <ContactItem>
-                    <Call style={{marginRight:"10px"}}/>+91 97654 78218
-                    </ContactItem>
-                    <ContactItem>
-                    <Email style={{marginRight:"10px"}}/>reachus@brownwoods.com
-                    </ContactItem>
-            </Right>
-        </Container>
-    )
+                                </List>
+                        </Center>
+
+                        <Right>
+                                <Title>Contact</Title>
+                                <ContactItem>
+                                        {/* inline styling for a space between icon and text */}
+                                        <Place style={{ marginRight: "10px" }} />  No:291,2nd main road,Siruseri,Chennai - 600 130
+                                </ContactItem>
+                                <ContactItem>
+                                        <Call style={{ marginRight: "10px" }} />+91 97654 78218
+                                </ContactItem>
+                                <ContactItem>
+                                        <Email style={{ marginRight: "10px" }} />reachus@brownwoods.com
+                                </ContactItem>
+                        </Right>
+                </Container>
+        )
 }
 
 export default Footer

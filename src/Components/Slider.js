@@ -1,4 +1,4 @@
-import { ArrowLeftOutlined, ArrowRightOutlined} from '@mui/icons-material';
+import { ArrowLeftOutlined, ArrowRightOutlined } from '@mui/icons-material';
 import React from 'react'
 import styled from 'styled-components'
 import { sliderItems } from '../data';
@@ -42,7 +42,7 @@ const Slide = styled.div`
         height:100vh ;
         display: flex;
         align-items:center;
-        background-color: #${props=> props.bg} ;
+        background-color: #${props => props.bg} ;
 `;
 const ImgContainer = styled.div`
         height: 84%;
@@ -77,39 +77,39 @@ const Slider = () => {
         const [slideIndex, setSlideIndex] = useState(0);
         //Setting direction for the arrows
         const handleClick = (direction) => {
-                if(direction==="left"){
-                        setSlideIndex(slideIndex>0 ? slideIndex-1 :2)
+                if (direction === "left") {
+                        setSlideIndex(slideIndex > 0 ? slideIndex - 1 : 2)
                 } else {
-                        setSlideIndex(slideIndex < 2 ? slideIndex +1 : 0)
+                        setSlideIndex(slideIndex < 2 ? slideIndex + 1 : 0)
                 }
 
         }
-    return (
-        <Container>
-            {/* passing props in styled components */}
+        return (
+                <Container>
+                        {/* passing props in styled components */}
 
-            <Arrow direction="left" onClick={()=>handleClick("left")}>
-                <ArrowLeftOutlined />
-            </Arrow>
+                        <Arrow direction="left" onClick={() => handleClick("left")}>
+                                <ArrowLeftOutlined />
+                        </Arrow>
 
-               <Wrapper slideIndex={slideIndex}>
-                {sliderItems.map((item) => (
-                 <Slide bg={item.bg} key={item.id}>
-                    <ImgContainer>
-                         <Image src={item.img}/>
-                    </ImgContainer>
-                    <InfoContainer>
-                        <Title>{item.title}</Title>
-                        <Desc>{item.desc}</Desc>
-                       <Link to="/CartApp"> <Button>Shop Now</Button></Link>
-                    </InfoContainer>
-                    </Slide>
-                ))}
-               </Wrapper>
-            <Arrow direction="right" onClick={()=>handleClick("right")}>
-                <ArrowRightOutlined />
-            </Arrow>
-        </Container>
-    )
+                        <Wrapper slideIndex={slideIndex}>
+                                {sliderItems.map((item) => (
+                                        <Slide bg={item.bg} key={item.id}>
+                                                <ImgContainer>
+                                                        <Image src={item.img} />
+                                                </ImgContainer>
+                                                <InfoContainer>
+                                                        <Title>{item.title}</Title>
+                                                        <Desc>{item.desc}</Desc>
+                                                        <Link to="/CartApp"> <Button>Shop Now</Button></Link>
+                                                </InfoContainer>
+                                        </Slide>
+                                ))}
+                        </Wrapper>
+                        <Arrow direction="right" onClick={() => handleClick("right")}>
+                                <ArrowRightOutlined />
+                        </Arrow>
+                </Container>
+        )
 }
 export default Slider
