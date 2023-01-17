@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom';
 const Cart = (props) => {
     const { cartItems, onAdd, onRemove } = props;
 
-    const itemsPrice = cartItems.reduce((a, c) => a + c.price * c.qty, 0);
+    const itemsPrice = cartItems.reduce((a, c) => a + c.price, 0);
     const taxPrice = itemsPrice * 0.18;
-    const shippingPrice = itemsPrice > 4999 ? 0 : 300;
+    const shippingPrice = itemsPrice > 9999 ? 0 : 300;
     const totalPrice = itemsPrice + taxPrice + shippingPrice;
     return (
         <aside className='block col-1'>
@@ -25,7 +25,7 @@ const Cart = (props) => {
                         </button>
                     </div>
                     <div className='col-2 text-right'>
-                        {item.qty} * Rs.{item.price.toFixed(2)}
+                        Rs.{item.price.toFixed(2)}
                     </div>
                 </div>
             ))}
@@ -51,7 +51,7 @@ const Cart = (props) => {
                     </div>
                     <hr />
                     <div className='row'>
-                        <Link to='/SignIn'><button>CHECKOUT</button></Link>
+                        <Link to='/Checkout'><button>CHECKOUT</button></Link>
                     </div>
                 </>
 

@@ -6,6 +6,7 @@ import SignIn from './Pages/SignIn';
 import Cart from './Cart/Cart'
 import CartApp from './Cart/CartApp';
 import { Routes, Route } from "react-router-dom";
+import Checkout from './Cart/Checkout';
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
       <Route path='/SignIn' element={<SignIn />} />
       <Route path='/CartApp' element={<CartApp />} />
       <Route path='/Cart' element={<Cart />} />
+      <Route path='/Checkout' element={<Checkout />} />
 
     </Routes>
 

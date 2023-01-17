@@ -1,6 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom';
+import { ShoppingCartOutlined } from '@mui/icons-material';
+import { Badge } from '@mui/material';
 
 const Container = styled.div`
         height: 25px;
@@ -43,18 +45,25 @@ const MenuItem = styled.div`
 
 
 
+const Navbar = (props) => {
 
+    const auth =sessionStorage.getItem('email')
+    // const navigate = useNavigate();
 
-const Navbar = () => {
+    const { countCartItems } = props;
     return (
+        <div>
+            {
+                auth?
         <Container>
             <Wrapper>
                 <Left>
-                    {/* <SearchContainer>
-                <Language>SEARCH:</Language> 
-                <Input/>
-                    <Search style={{color:"gray",fontSize:15}}/>
-                </SearchContainer > */}
+                    <Badge badgeContent={countCartItems ? (
+                        <button className='badge'>{countCartItems}</button>
+                    ) : ('')
+                    }>
+                        <ShoppingCartOutlined />
+                    </Badge>
                 </Left>
 
                 <Center>
@@ -62,11 +71,39 @@ const Navbar = () => {
                 </Center>
 
                 <Right>
-                    <Link to='Register'><MenuItem>REGISTER</MenuItem></Link>
-                    <Link to='SignIn'><MenuItem>SIGN IN</MenuItem></Link>
+                    <Link to='/'><MenuItem>HOME</MenuItem></Link>
+                    <Link to='/SignIn'><MenuItem>SIGN OUT</MenuItem></Link>
+
                 </Right>
             </Wrapper>
         </Container>
+
+        :
+        <Container>
+        <Wrapper>
+            <Left>
+                <Badge badgeContent={countCartItems ? (
+                    <button className='badge'>{countCartItems}</button>
+                ) : ('')
+                }>
+                    <ShoppingCartOutlined />
+                </Badge>
+            </Left>
+
+            <Center>
+                <Logo>BrOwN WoOdS</Logo>
+            </Center>
+
+            <Right>
+                <Link to='/'><MenuItem>HOME</MenuItem></Link>
+                <Link to='/Register'><MenuItem>REGISTER</MenuItem></Link>
+                <Link to='/SignIn'><MenuItem>SIGN IN</MenuItem></Link>
+
+            </Right>
+        </Wrapper>
+    </Container>    
+ }
+        </div>
     )
 }
 
