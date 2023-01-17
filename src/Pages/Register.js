@@ -1,8 +1,8 @@
 import { useState } from "react";
-import axios from "axios";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
+import ecommerceUrl from "../Axios/AxiosURL";
 
 const Container = styled.div`
         width: 100vw;
@@ -62,7 +62,7 @@ const Register = () => {
                 console.log(registerObject);
                 e.preventDefault();
 
-                axios.post("http://localhost:8000/SignIn", registerObject).then((res) => {
+                ecommerceUrl.post("SignIn", registerObject).then((res) => {
                         alert("Registered Successfully");
                         navigate("/SignIn");
                 }).catch((err) => {

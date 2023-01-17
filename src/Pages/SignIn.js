@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import ecommerceUrl from "../Axios/AxiosURL";
 
 const Container = styled.div`
         width: 100vw;
@@ -59,7 +59,7 @@ const SignIn = () => {
                 if (validate()) {
                         e.preventDefault();
                         //implementing login functionalities
-                        axios.get("http://localhost:8000/SignIn?email=" + email).then((res) => {
+                        ecommerceUrl.get( "SignIn?email="+ email).then((res) => {
                                 console.log(res.data);
                                 return res.data;
                         }).then((resp) => {

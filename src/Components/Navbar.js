@@ -98,7 +98,6 @@ const Navbar = (props) => {
                 <Link to='/'><MenuItem>HOME</MenuItem></Link>
                 <Link to='/Register'><MenuItem>REGISTER</MenuItem></Link>
                 <Link to='/SignIn'><MenuItem>SIGN IN</MenuItem></Link>
-
             </Right>
         </Wrapper>
     </Container>    

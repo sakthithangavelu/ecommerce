@@ -4,15 +4,15 @@ import Cart from './Cart';
 import data from './data';
 import Announcement from '../Components/Announcement'
 import Footer from '../Components/Footer'
-import axios from 'axios';
 import Navbar from '../Components/Navbar';
+import ecommerceUrl from '../Axios/AxiosURL';
 
 function CartApp() {
   const { products } = data;
   const [cartItems, setCartItems] = useState([]);
   useEffect(() => {
     const email = sessionStorage.getItem("email");
-    axios.get("http://localhost:8000/CartItems?email=" + email).then((res) => {
+    ecommerceUrl.get("CartItems?email=" + email).then((res) => {
       setCartItems(res.data)
     });
   }, []);
@@ -28,14 +28,14 @@ function CartApp() {
       setCartItems([...cartItems, { ...product }])
     }
     const email = sessionStorage.getItem("email");
-    axios.post("http://localhost:8000/CartItems", { ...product, email })
+    ecommerceUrl.post("CartItems", { ...product, email })
 
   }
 
 
   const onRemove = (product) => {
 
-    axios.delete("http://localhost:8000/CartItems/" + product.id).then((resp) => {
+    ecommerceUrl.delete("CartItems/" + product.id).then((resp) => {
       setCartItems(cartItems.filter((x) => x.id !== product.id));
     });
 
