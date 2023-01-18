@@ -7,6 +7,7 @@ import Cart from './Cart/Cart'
 import CartApp from './Cart/CartApp';
 import { Routes, Route } from "react-router-dom";
 import Checkout from './Cart/Checkout';
+import ViewOrders from './Cart/ViewOrders';
 
 const App = () => {
   return (
@@ -18,7 +19,7 @@ const App = () => {
       <Route path='/CartApp' element={<CartApp />} />
       <Route path='/Cart' element={<Cart />} />
       <Route path='/Checkout' element={<Checkout />} />
-
+      <Route path='/ViewOrders' element={<ViewOrders />} />
     </Routes>
 
   )

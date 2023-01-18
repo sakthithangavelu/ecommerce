@@ -72,6 +72,7 @@ const Navbar = (props) => {
 
                 <Right>
                     <Link to='/'><MenuItem>HOME</MenuItem></Link>
+                    <Link to='/ViewOrders'><MenuItem>MY ORDERS</MenuItem></Link>
                     <Link to='/SignIn'><MenuItem>SIGN OUT</MenuItem></Link>
 
                 </Right>
