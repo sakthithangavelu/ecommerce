@@ -19,17 +19,22 @@ const ViewOrders = (product) => {
         <div>
             <Announcement/>
             <Navbar/>
-            Your Orders : 
+            <div className='viewform'>
+           
         {
+             
             myCart.map(item=>
-            <div>
-                <img src={item.image}/>
-                <p>{item.id}</p>
-                <p>{item.name}</p>
-                <p>{item.email}</p>
-            </div>
+            <div className='cflex'>
+               
+                <img src={item.image} className='small'/>
+                <p>userid :{item.email}</p>
+                <p>Product Price : Rs.{item.price}/-</p>
+                <p>Product name: {item.name}</p>
+               </div>
+         
             )
         }
+        </div>
            <Footer/>
         </div>
     )

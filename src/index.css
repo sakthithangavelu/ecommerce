@@ -140,6 +140,17 @@ button.badge {
   padding: 20px;
   flex:none;
 }
+.viewform{
+  width: 100%;
+  background-color:#c6f7ed;
+  align-items: center;
+  justify-content:center;
+  margin-top: 20px;
+  height: 600px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
 .cflex{
   display: flex;
   flex-direction: row;

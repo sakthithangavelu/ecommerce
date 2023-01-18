@@ -52,18 +52,25 @@
   ],
   "CartItems": [
     {
-      "id": "2",
-      "name": "Spine care health bed",
-      "price": 13000,
-      "image": "/assets/images/img2.jpg",
-      "email": "surya@aspiresys.com"
-    },
-    {
       "id": "4",
       "name": "Bosston single bed",
       "price": 9000,
       "image": "/assets/images/img4.jpg",
-      "email": null
+      "email": "surya@aspiresys.com"
+    },
+    {
+      "id": "3",
+      "name": "Solid wood single bed",
+      "price": 8500,
+      "image": "/assets/images/img3.jpg",
+      "email": "surya@aspiresys.com"
+    },
+    {
+      "id": "8",
+      "name": "Clint wood table",
+      "price": 11000,
+      "image": "/assets/images/img8.jpg",
+      "email": "surya@aspiresys.com"
     }
   ]
 }
