@@ -41,9 +41,14 @@
       "email": "srikarthick@aspiresys.com",
       "password": "Srikarthick@123",
       "id": 6
+    },
+    {
+      "fname": "Maha",
+      "lname": "Lakshmi",
+      "email": "maha@aspiresys.com",
+      "password": "Maha@123",
+      "id": 7
     }
   ],
-  "CartItems": [
-   
-  ]
+  "CartItems": []
 }

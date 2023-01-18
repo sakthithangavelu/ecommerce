@@ -99,3 +99,38 @@ button.badge {
   width: 1rem;
   border-radius: 50%;
 }
+.box{
+  /* width: 500px; */
+  padding: 30px;
+  background-color: #fff;
+  border-radius: 5px;
+}
+
+.input-with-icon-div{
+  display: flex;
+}
+
+.icon-span{
+  cursor: pointer;
+}
+
+.tracker-box{
+  background-color: #386489;
+  font-size: 14px;
+  color: #fff;
+  letter-spacing: 0.09em;
+  padding: 15px;
+  border-radius: 5px;
+  margin-top: 5px;
+}
+.tracker-box .validated{
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.list-icon{
+  margin-right: 8px;
+}
+
+.list-icon.green{
+  color: #0f0;
+}
