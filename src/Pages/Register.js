@@ -34,18 +34,14 @@ const Form = styled.form`
 `;
 const Input = styled.input`
         flex: 1;
-        min-width:50%;
+        min-width:92%;
         margin:20px 10px 0px 0px;
         padding: 10px;
 `;
 const Button = styled.button`
-        width: 100%;
-        margin-bottom:5px;
-        border:none;
-        padding:15px 20px;
-        background-color:teal;
-        color:white;
-        cursor: pointer;
+        width: 99%;
+        padding:5px;
+       
 `;
 
 const Register = () => {
@@ -106,13 +102,23 @@ const Register = () => {
                 let registerObject = { fname, lname, email, password }
                 console.log(registerObject);
                 e.preventDefault();
+                ecommerceUrl.get("signIn?email=" + email).then((res) => {
+                        if (res.data.length === 0) {
+                                console.log(res.data)
+                                ecommerceUrl.post("SignIn", registerObject).then((res) => {
+                                        alert("Registered Successfully");
+                                        navigate("/SignIn");
+                                }).catch((err) => {
+                                        alert("Registration Failed:" + err.message);
+                                });
+                        }
+                        else{
+                                alert("Email already exist")
+                        }
+                })
 
-                ecommerceUrl.post("SignIn", registerObject).then((res) => {
-                        alert("Registered Successfully");
-                        navigate("/SignIn");
-                }).catch((err) => {
-                        alert("Registration Failed:" + err.message);
-                });
+
+
         }
         return (
                 <Container>
@@ -122,7 +128,7 @@ const Register = () => {
                                         <Input value={fname} onChange={e => fnameChange(e.target.value)} type="text" placeholder="First name" required />
                                         <Input value={lname} onChange={e => lnameChange(e.target.value)} type="text" placeholder="Last name" required />
                                         <Input value={email} onChange={e => emailChange(e.target.value)} type="email" placeholder="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Please enter valid email [abc@mail.com]." required />
-                                        <Input value={password}  type={type} onChange={e => passwordChange(e.target.value)} placeholder="Password" required />
+                                        <Input value={password} type={type} onChange={e => passwordChange(e.target.value)} placeholder="Password" required />
                                         {type === "password" ? (
                                                 <span className='icon-span' onClick={() => setType("text")}>
                                                         <Icon icon={basic_eye_closed} size={18} />

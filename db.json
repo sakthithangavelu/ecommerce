@@ -48,6 +48,13 @@
       "email": "maha@aspiresys.com",
       "password": "Maha@123",
       "id": 7
+    },
+    {
+      "fname": "Merlins",
+      "lname": "Arul",
+      "email": "merlins@aspiresys.com",
+      "password": "Merlins@123",
+      "id": 8
     }
   ],
   "CartItems": [
@@ -56,21 +63,14 @@
       "name": "Bosston single bed",
       "price": 9000,
       "image": "/assets/images/img4.jpg",
-      "email": "surya@aspiresys.com"
-    },
-    {
-      "id": "3",
-      "name": "Solid wood single bed",
-      "price": 8500,
-      "image": "/assets/images/img3.jpg",
-      "email": "surya@aspiresys.com"
+      "email": null
     },
     {
       "id": "8",
       "name": "Clint wood table",
       "price": 11000,
       "image": "/assets/images/img8.jpg",
-      "email": "surya@aspiresys.com"
+      "email": null
     }
   ]
 }

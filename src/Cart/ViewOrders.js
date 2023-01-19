@@ -27,9 +27,11 @@ const ViewOrders = (product) => {
             <div className='cflex'>
                
                 <img src={item.image} className='small'/>
-                <p>userid :{item.email}</p>
+                <div >
+                <p>User Id :{item.email}</p>
                 <p>Product Price : Rs.{item.price}/-</p>
-                <p>Product name: {item.name}</p>
+                <p>Product name : {item.name}</p>
+                </div>
                </div>
          
             )

@@ -9,9 +9,7 @@ code {
     monospace;
 }
 
-h1,
-h2,
-h3 {
+h1,h2,h3 {
   margin: 0.5rem 0;
 }
 
@@ -101,6 +99,8 @@ button.badge {
 }
 
 .icon-span {
+  float: right;
+  color: greenyellow;
   cursor: pointer;
 }
 
@@ -186,3 +186,4 @@ input
   border: 1px solid #dadada;
   color: #888;
 }
+

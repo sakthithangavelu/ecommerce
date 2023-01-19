@@ -30,19 +30,15 @@ const Form = styled.form`
 `;
 const Input = styled.input`
         flex: 1;
-        min-width:40%;
+        min-width:95%;
         margin:10px 0px;
         padding: 10px;
 `;
 const Button = styled.button`
         width: 100%;
-        border:none;
-        padding:15px 20px;
-        background-color:teal;
-        color:white;
-        cursor: pointer;
-        margin-bottom:5px;
-`;
+        padding:5px;
+       
+`; 
 
 const SignIn = () => {
 

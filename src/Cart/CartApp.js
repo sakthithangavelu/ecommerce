@@ -10,6 +10,8 @@ import ecommerceUrl from '../Axios/AxiosURL';
 function CartApp() {
   const { products } = data;
   const [cartItems, setCartItems] = useState([]);
+
+  
   useEffect(() => {
     const email = sessionStorage.getItem("email");
     ecommerceUrl.get("CartItems?email=" + email).then((res) => {
