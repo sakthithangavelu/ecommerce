@@ -140,7 +140,7 @@ button.badge {
   padding: 20px;
   flex:none;
 }
-.viewform{
+/* .viewform{
   width: 100%;
   background-color:#c6f7ed;
   background:url("https://wallpaperaccess.com/full/2076146.jpg")center;
@@ -151,20 +151,20 @@ button.badge {
   padding: 20px;
   display: flex;
   flex-direction: column;
-}
-.cflex{
+} */
+/* .cflex{
   display: flex;
   flex-direction: row;
   background: #f6f6f6;
   border-radius: 0 0 5px 5px;
   padding: 25px;
-}
-p{
+} */
+/* p{
   display: block;
   color: #888;
   margin: 0;
   padding-left: 25px;
-}
+} */
 .required{
   color: red;
 }

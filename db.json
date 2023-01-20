@@ -59,12 +59,22 @@
   ],
   "CartItems": [
     {
-      "id": "4",
-      "name": "Bosston single bed",
-      "price": 9000,
-      "image": "/assets/images/img4.jpg",
-      "email": null
+      "id": "11",
+      "name": "Floret dining table",
+      "price": 9999,
+      "image": "/assets/images/img11.jpg",
+      "email": "surya@aspiresys.com"
     }
   ],
-  "UserAddress": []
+  "UserAddress": [
+    {
+      "name": "Surya",
+      "email": "surya@aspiresys.com",
+      "address1": "2",
+      "address2": "2",
+      "postcode": "22",
+      "phone": "2",
+      "id": 1
+    }
+  ]
 }
