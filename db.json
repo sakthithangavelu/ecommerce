@@ -64,13 +64,7 @@
       "price": 9000,
       "image": "/assets/images/img4.jpg",
       "email": null
-    },
-    {
-      "id": "8",
-      "name": "Clint wood table",
-      "price": 11000,
-      "image": "/assets/images/img8.jpg",
-      "email": null
     }
-  ]
+  ],
+  "UserAddress": []
 }

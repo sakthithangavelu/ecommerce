@@ -1,16 +1,39 @@
 import React from 'react'
+import styled from 'styled-components';
+
+
+const Container = styled.div`
+`;
+const Title = styled.h3`
+  font-size: 1rem;
+  margin: 0.5rem 0;
+`;
+const Price = styled.div`
+`;
+const Button = styled.button`
+  font-size: 0.8rem;
+  padding: 0.2rem;
+  margin: 0.1rem;
+  border: 0.1rem #404040 solid;
+  background-color: teal;
+  color: white;
+  width: 100%;
+  cursor: pointer;
+
+`;
+const Image = styled.img`
+   max-height: 10rem;
+`;
 
 const Product = (props) => {
   const { product, onAdd } = props;
   return (
-    <div>
-       <h3>{product.name}</h3>
-      <img className='small' src={product.image} alt={product.name}></img>
-      <div>Rs.{product.price}</div>
-      <div>
-        <button onClick={() => onAdd(product)}>ADD TO CART</button>
-      </div>
-    </div>
+    <Container>
+      <Title>{product.name}</Title>
+      <Image src={product.image} alt={product.name}></Image>
+      <Price>Rs.{product.price}</Price>
+      <Button onClick={() => onAdd(product)}>ADD TO CART</Button>
+    </Container>
   )
 }
 

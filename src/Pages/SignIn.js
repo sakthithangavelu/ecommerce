@@ -12,7 +12,6 @@ const Container = styled.div`
         background-size: cover;
         align-items: center;
         justify-content:center;
-        
 `;
 const Wrapper = styled.div`
         padding: 20px;
@@ -30,14 +29,17 @@ const Form = styled.form`
 `;
 const Input = styled.input`
         flex: 1;
-        min-width:95%;
-        margin:10px 0px;
+        min-width:92%;
+        margin:20px 0px;
         padding: 10px;
 `;
 const Button = styled.button`
         width: 100%;
         padding:5px;
-       
+        margin: 0.1rem;
+        background-color: teal;
+        color: white;
+        cursor: pointer; 
 `; 
 
 const SignIn = () => {

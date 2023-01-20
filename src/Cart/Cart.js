@@ -10,16 +10,16 @@ const Cart = (props) => {
     const totalPrice = itemsPrice + taxPrice + shippingPrice;
     return (
         <aside className='block col-1'>
-            <h2>Cart Items</h2>
+            <h2>CART ITEMS</h2>
             <div>
                 {cartItems.length === 0 && <div>Cart Is Empty</div>}</div>
             {cartItems.map((item) => (
                 <div key={item.id} className='row'>
                     <div className='col-2'>{item.name}</div>
                     <div className='col-2'>
-                        <button onClick={() => onAdd(item)} className='add'>
+                        {/* <button onClick={() => onAdd(item)} className='add'>
                             +
-                        </button>
+                        </button> */}
                         <button onClick={() => onRemove(item)} className='remove'>
                             -
                         </button>
@@ -50,7 +50,7 @@ const Cart = (props) => {
                         <div className='col-1 text-right'>Rs.{totalPrice.toFixed(2)}</div>
                     </div>
                     <hr />
-                    <div className='row'>
+                    <div>
                         <Link to='/Checkout'><button>CHECKOUT</button></Link>
                     </div>
                 </>

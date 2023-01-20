@@ -28,9 +28,6 @@ const SocialIcon = styled.div`
         align-items:center;
         justify-content:center;
 `;
-
-
-
 const Title = styled.h3`
         margin-bottom:30px;
 `;

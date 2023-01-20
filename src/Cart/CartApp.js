@@ -6,8 +6,19 @@ import Announcement from '../Components/Announcement'
 import Footer from '../Components/Footer'
 import Navbar from '../Components/Navbar';
 import ecommerceUrl from '../Axios/AxiosURL';
+import styled from 'styled-components';
 
-function CartApp() {
+const Container = styled.div`
+        text-align: center;
+`;
+const Wrapper = styled.div`
+       display: flex;
+       flex-wrap: wrap;
+       padding: 18px;
+       justify-content: space-between;
+`;
+
+const CartApp = () => {
   const { products } = data;
   const [cartItems, setCartItems] = useState([]);
 
@@ -34,7 +45,6 @@ function CartApp() {
 
   }
 
-
   const onRemove = (product) => {
 
     ecommerceUrl.delete("CartItems/" + product.id).then((resp) => {
@@ -42,16 +52,17 @@ function CartApp() {
     });
 
   }
+
   return (
-    <div className='App'>
+    <Container>
       <Announcement />
       <Navbar countCartItems={cartItems.length} />
-      <div className='row'>
+      <Wrapper>
         <Main onAdd={onAdd} products={products}></Main>
         <Cart onAdd={onAdd} onRemove={onRemove} cartItems={cartItems} countCartItems={cartItems.length}></Cart>
         <Footer />
-      </div>
-    </div>
+      </Wrapper>
+    </Container>
 
   );
 }

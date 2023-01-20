@@ -34,7 +34,7 @@ const Wrapper = styled.div`
         height : 100%;
         display: flex;
         transition: all 1.5s ease;
-        transform:translateX(${props => props.slideIndex * -100}vw)//The transform property applies a 2D or 3D transformation to an element. This property allows you to rotate, scale, move, skew, etc., elements.
+        transform:translateX(${props => props.slideIndex * -100}vw);//The transform property applies a 2D or 3D transformation to an element. This property allows you to rotate, scale, move, skew, etc., elements.
 
 `;
 const Slide = styled.div`
@@ -50,6 +50,7 @@ const ImgContainer = styled.div`
 `;
 const InfoContainer = styled.div`
         padding: 50px;
+        margin-bottom:100px;
         flex:1;
 `;
 const Image = styled.img`
@@ -57,18 +58,28 @@ const Image = styled.img`
         height:80%;       
 `;
 const Title = styled.h1`
-        font-size : 70px;
+        font-size : 60px;
+        margin: 10px ;
+        margin-bottom:10px;
+        /* padding-bottom:200px; */
 `;
 const Desc = styled.p`
         margin: 50px 0px;
+        margin-top:10px;
         font-size: 20px;
         font-weight:500;
         letter-spacing:2px;
 `;
 const Button = styled.button`
-        padding: 10px;
-        font-size:20px;
-        cursor:pointer;
+        font-size: 18px;
+        padding: 20px;
+        text-align:center;
+        align-items:center;
+        background-color: teal;
+        color: white;
+        cursor: pointer;
+        display:flex;
+        margin:auto;
 `;
 
 
@@ -82,7 +93,6 @@ const Slider = () => {
                 } else {
                         setSlideIndex(slideIndex < 2 ? slideIndex + 1 : 0)
                 }
-
         }
         return (
                 <Container>

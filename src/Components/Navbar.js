@@ -29,7 +29,6 @@ const Center = styled.div`
 const Logo = styled.h1`
         font-weight : bold;
 `;
-
 //Right Portion of Page
 const Right = styled.div`
         flex : 1;
@@ -42,7 +41,6 @@ const MenuItem = styled.div`
         cursor : pointer;
         margin-left:25px ;
 `;
-
 
 
 const Navbar = (props) => {
@@ -58,12 +56,12 @@ const Navbar = (props) => {
         <Container>
             <Wrapper>
                 <Left>
-                    <Badge badgeContent={countCartItems ? (
+                <Link to="/CartApp" ><Badge badgeContent={countCartItems ? (
                         <button className='badge'>{countCartItems}</button>
                     ) : ('')
                     }>
                         <ShoppingCartOutlined />
-                    </Badge>
+                    </Badge></Link>
                 </Left>
 
                 <Center>
@@ -83,12 +81,12 @@ const Navbar = (props) => {
         <Container>
         <Wrapper>
             <Left>
-                <Badge badgeContent={countCartItems ? (
-                    <button className='badge'>{countCartItems}</button>
+            <Link to="/CartApp" ><Badge badgeContent={countCartItems ? (
+                  <button className='badge'>{countCartItems}</button>
                 ) : ('')
                 }>
                     <ShoppingCartOutlined />
-                </Badge>
+                </Badge></Link>
             </Left>
 
             <Center>

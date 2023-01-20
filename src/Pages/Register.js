@@ -9,8 +9,6 @@ import { basic_eye_closed } from 'react-icons-kit/linea/basic_eye_closed';
 import { arrows_exclamation } from 'react-icons-kit/linea/arrows_exclamation'
 import { arrows_circle_check } from 'react-icons-kit/linea/arrows_circle_check'
 
-
-
 const Container = styled.div`
         width: 100vw;
         height: 100vh;
@@ -39,9 +37,12 @@ const Input = styled.input`
         padding: 10px;
 `;
 const Button = styled.button`
-        width: 99%;
         padding:5px;
-       
+        margin: 0.1rem;
+        background-color: teal;
+        color: white;
+        width: 100%;
+        cursor: pointer;
 `;
 
 const Register = () => {
@@ -116,9 +117,6 @@ const Register = () => {
                                 alert("Email already exist")
                         }
                 })
-
-
-
         }
         return (
                 <Container>
