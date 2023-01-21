@@ -44,6 +44,29 @@ const Button = styled.button`
         width: 100%;
         cursor: pointer;
 `;
+const IconSpan = styled.div`
+        float: right;
+        color: greenyellow;
+        cursor: pointer;
+`;
+const TrackerBox = styled.main`
+        background-color: #386489;
+        font-size: 14px;
+        color: white;
+        letter-spacing: 0.09em;
+        padding: 15px;
+        border-radius: 5px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+`;
+const ListIconGreen = styled.span`
+        color: rgb(46, 243, 46);
+`;
+const ListIcon = styled.span`
+        margin-right: 8px;
+`;
+
+
 
 const Register = () => {
 
@@ -114,7 +137,7 @@ const Register = () => {
                                 });
                         }
                         else{
-                                alert("Email already exist")
+                                alert("Email already exist");
                         }
                 })
         }
@@ -128,77 +151,77 @@ const Register = () => {
                                         <Input value={email} onChange={e => emailChange(e.target.value)} type="email" placeholder="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Please enter valid email [abc@mail.com]." required />
                                         <Input value={password} type={type} onChange={e => passwordChange(e.target.value)} placeholder="Password" required />
                                         {type === "password" ? (
-                                                <span className='icon-span' onClick={() => setType("text")}>
+                                                <IconSpan onClick={() => setType("text")}>
                                                         <Icon icon={basic_eye_closed} size={18} />
-                                                </span>
+                                                </IconSpan>
                                         ) : (
-                                                <span className='icon-span' onClick={() => setType("password")}>
+                                                <IconSpan onClick={() => setType("password")}>
                                                         <Icon icon={basic_eye} size={18} />
-                                                </span>
+                                                </IconSpan>
                                         )}
                                         {/* validation tracker */}
-                                        <main className='tracker-box'>
+                                        <TrackerBox>
                                                 <div className={lowerValidated ? 'validated' : 'not-validated'}>
                                                         {lowerValidated ? (
-                                                                <span className='list-icon green'>
+                                                                <ListIconGreen>
                                                                         <Icon icon={arrows_circle_check} />
-                                                                </span>
+                                                                </ListIconGreen>
                                                         ) : (
-                                                                <span className='list-icon'>
+                                                                <ListIcon>
                                                                         <Icon icon={arrows_exclamation} />
-                                                                </span>
+                                                                </ListIcon>
                                                         )}
                                                         At least one lowercase letter
                                                 </div>
                                                 <div className={upperValidated ? 'validated' : 'not-validated'}>
                                                         {upperValidated ? (
-                                                                <span className='list-icon green'>
+                                                                <ListIconGreen>
                                                                         <Icon icon={arrows_circle_check} />
-                                                                </span>
+                                                                </ListIconGreen>
                                                         ) : (
-                                                                <span className='list-icon'>
+                                                                <ListIcon>
                                                                         <Icon icon={arrows_exclamation} />
-                                                                </span>
+                                                                </ListIcon>
                                                         )}
                                                         At least one uppercase letter
                                                 </div>
                                                 <div className={numberValidated ? 'validated' : 'not-validated'}>
                                                         {numberValidated ? (
-                                                                <span className='list-icon green'>
+                                                                <ListIconGreen>
                                                                         <Icon icon={arrows_circle_check} />
-                                                                </span>
+                                                                </ListIconGreen>
                                                         ) : (
-                                                                <span className='list-icon'>
+                                                                <ListIcon>
                                                                         <Icon icon={arrows_exclamation} />
-                                                                </span>
+                                                                </ListIcon>
                                                         )}
                                                         At least one number
                                                 </div>
                                                 <div className={specialValidated ? 'validated' : 'not-validated'}>
                                                         {specialValidated ? (
-                                                                <span className='list-icon green'>
+                                                                <ListIconGreen>
                                                                         <Icon icon={arrows_circle_check} />
-                                                                </span>
+                                                                </ListIconGreen>
                                                         ) : (
-                                                                <span className='list-icon'>
+                                                                <ListIcon>
                                                                         <Icon icon={arrows_exclamation} />
-                                                                </span>
+                                                                </ListIcon>
                                                         )}
                                                         At least one special character
                                                 </div>
                                                 <div className={lengthValidated ? 'validated' : 'not-validated'}>
                                                         {lengthValidated ? (
-                                                                <span className='list-icon green'>
+                                                                <ListIconGreen>
                                                                         <Icon icon={arrows_circle_check} />
-                                                                </span>
+                                                                </ListIconGreen>
                                                         ) : (
-                                                                <span className='list-icon'>
+                                                                <ListIcon>
                                                                         <Icon icon={arrows_exclamation} />
-                                                                </span>
+                                                                </ListIcon>
                                                         )}
                                                         At least 8 characters
                                                 </div>
-                                        </main>
+                                        </TrackerBox>
                                         <Button type="submit">CREATE</Button>
                                         <Link to="/"><Button>BACK</Button></Link>
                                 </Form>
