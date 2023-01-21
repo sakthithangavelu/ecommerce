@@ -32,6 +32,7 @@ const Input = styled.input`
         min-width:92%;
         margin:20px 0px;
         padding: 10px;
+        
 `;
 const Button = styled.button`
         width: 100%;

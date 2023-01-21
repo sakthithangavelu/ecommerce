@@ -65,9 +65,7 @@ const ViewOrders = (product) => {
             <Announcement />
             <Navbar />
             <Wrapper>
-
                 {
-
                     myCart.map(item =>
                         <DetailsContainer>
 
