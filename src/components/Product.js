@@ -1,15 +1,12 @@
-import React from 'react'
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
-
-const Container = styled.div`
-`;
+const Container = styled.div``;
 const Title = styled.h3`
   font-size: 1rem;
   margin: 0.5rem 0;
 `;
-const Price = styled.div`
-`;
+const Price = styled.div``;
 const Button = styled.button`
   font-size: 0.8rem;
   padding: 0.2rem;
@@ -19,10 +16,9 @@ const Button = styled.button`
   color: white;
   width: 100%;
   cursor: pointer;
-
 `;
 const Image = styled.img`
-   max-height: 10rem;
+  max-height: 10rem;
 `;
 
 const Product = (props) => {
@@ -34,7 +30,7 @@ const Product = (props) => {
       <Price>Rs.{product.price}</Price>
       <Button onClick={() => onAdd(product)}>ADD TO CART</Button>
     </Container>
-  )
-}
+  );
+};
 
-export default Product
+export default Product;

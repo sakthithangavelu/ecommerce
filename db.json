@@ -55,10 +55,19 @@
       "email": "merlins@aspiresys.com",
       "password": "Merlins@123",
       "id": 8
+    },
+    {
+      "fname": "Monica",
+      "lname": "Krish",
+      "email": "monica@aspiresys.com",
+      "password": "Monica@123",
+      "id": 9
     }
   ],
   "CartItems": [
     
   ],
-  "UserAddress": []
+  "UserAddress": [
+    
+  ]
 }

@@ -1,6 +1,6 @@
-import React from 'react'
-import Product from './Product';
-import styled from 'styled-components';
+import React from "react";
+import Product from "./Product";
+import styled from "styled-components";
 
 const Container = styled.div`
   background-color: #c6f7ed;
@@ -31,7 +31,7 @@ const Main = (props) => {
         ))}
       </Wrapper>
     </Container>
-  )
-}
+  );
+};
 
-export default Main
+export default Main;

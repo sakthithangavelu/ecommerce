@@ -1,4 +1,3 @@
-
 export const sliderItems = [
   {
     id: 1,
@@ -22,4 +21,3 @@ export const sliderItems = [
     bg: "faf3de",
   },
 ];
-

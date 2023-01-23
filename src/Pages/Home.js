@@ -1,8 +1,8 @@
-import React from 'react'
-import Announcement from '../Components/Announcement'
-import Navbar from '../Components/Navbar'
-import Slider from '../Components/Slider'
-import Footer from '../Components/Footer'
+import React from "react";
+import Announcement from "../components/Announcement";
+import Navbar from "../components/Navbar";
+import Slider from "../components/Slider";
+import Footer from "../components/Footer";
 
 const Home = () => {
   return (
@@ -12,7 +12,7 @@ const Home = () => {
       <Slider />
       <Footer />
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
