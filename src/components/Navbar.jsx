@@ -20,7 +20,6 @@ const Left = styled.div`
   display: flex;
   align-items: center;
 `;
-
 //Center Portion of Page
 const Center = styled.div`
   flex: 1;
@@ -90,7 +89,7 @@ const Navbar = (props) => {
                 <Container>
                     <Wrapper>
                         <Left>
-                            <Link to="/CartApp">
+                            <Link to="/SignIn">
                                 <Badge
                                     badgeContent={
                                         countCartItems ? <Button>{countCartItems}</Button> : " "

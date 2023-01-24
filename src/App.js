@@ -8,6 +8,7 @@ import CartApp from "./components/CartApp";
 import { Routes, Route } from "react-router-dom";
 import Checkout from "./components/Checkout";
 import ViewOrders from "./components/ViewOrders";
+import ShopNow from "./components/ShopNow";
 
 const App = () => {
   return (
@@ -19,6 +20,7 @@ const App = () => {
       <Route path="/Cart" element={<Cart />} />
       <Route path="/Checkout" element={<Checkout />} />
       <Route path="/ViewOrders" element={<ViewOrders />} />
+      <Route path="/ShopNow" element={<ShopNow />} />
     </Routes>
   );
 };
