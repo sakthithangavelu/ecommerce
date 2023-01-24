@@ -64,10 +64,16 @@
       "id": 9
     }
   ],
-  "CartItems": [
-    
-  ],
+  "CartItems": [],
   "UserAddress": [
-    
+    {
+      "name": "c",
+      "email": "surya@aspiresys.com",
+      "address1": "fghj",
+      "address2": "hjk",
+      "postcode": "789",
+      "phone": "hj",
+      "id": 1
+    }
   ]
 }
