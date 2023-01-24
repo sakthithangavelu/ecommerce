@@ -4,7 +4,7 @@ import Navbar from "./Navbar";
 import Footer from "./Footer";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-import ecommerceUrl from "../Axios/AxiosURL";
+import ecommerceUrl from "../axios/AxiosURL";
 import styled from "styled-components";
 
 const Container = styled.div`

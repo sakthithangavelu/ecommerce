@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-import ecommerceUrl from "../Axios/AxiosURL";
+import ecommerceUrl from "../axios/AxiosURL";
 
 const Container = styled.div`
   width: 100vw;

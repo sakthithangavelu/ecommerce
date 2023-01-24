@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
-import ecommerceUrl from "../Axios/AxiosURL";
+import ecommerceUrl from "../axios/AxiosURL";
 import Icon from "react-icons-kit";
 import { basic_eye } from "react-icons-kit/linea/basic_eye";
 import { basic_eye_closed } from "react-icons-kit/linea/basic_eye_closed";

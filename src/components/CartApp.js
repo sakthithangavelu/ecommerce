@@ -5,7 +5,7 @@ import data from "./data";
 import Announcement from "./Announcement";
 import Footer from "./Footer";
 import Navbar from "./Navbar";
-import ecommerceUrl from "../Axios/AxiosURL";
+import ecommerceUrl from "../axios/AxiosURL";
 import styled from "styled-components";
 
 const Container = styled.div`
