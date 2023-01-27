@@ -98,7 +98,6 @@ const Slider = () => {
         };
         return (
                 <Container>
-                        {/* passing props in styled components */}
                         <Arrow direction="left" onClick={() => handleClick("left")}>
                                 <ArrowLeftOutlined />
                         </Arrow>

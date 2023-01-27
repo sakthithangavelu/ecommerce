@@ -54,7 +54,6 @@ const SignIn = () => {
         const ProceedLogin = (e) => {
                 if (validate()) {
                         e.preventDefault();
-                        //implementing login functionalities
                         ecommerceUrl
                                 .get("SignIn?email=" + email)
                                 .then((res) => {

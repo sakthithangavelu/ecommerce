@@ -180,7 +180,6 @@ const Register = () => {
                                                         <Icon icon={basic_eye} size={18} />
                                                 </IconSpan>
                                         )}
-                                        {/* validation tracker */}
                                         <TrackerBox>
                                                 <Validation>
                                                         {lowerValidated ? (
