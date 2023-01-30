@@ -26,6 +26,8 @@ const Title = styled.h1`
   font-size: 24px;
   font-weight: 3000;
 `;
+const Cod = styled.h4` 
+`;
 const Form = styled.form``;
 const Input = styled.input`
   flex: 1;
@@ -84,7 +86,7 @@ const Checkout = () => {
               type="email"
               value={email}
               onChange={(e) => emailChange(e.target.value)}
-              placeholder="Registered Email ID"
+              placeholder="*Registered Email ID*"
               required
             />
             <Input
@@ -115,8 +117,7 @@ const Checkout = () => {
               placeholder="Mobile number"
               required
             />
-            <br />
-            <br />
+            <Cod>*Cash on delivery only available..!</Cod>
             <Button type="submit">Place Order</Button>
           </Form>
         </Wrapper>

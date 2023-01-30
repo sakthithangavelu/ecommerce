@@ -24,12 +24,14 @@ const Image = styled.img`
 const Product = (props) => {
   const { product, onAdd } = props;
   return (
+
     <Container>
       <Title>{product.name}</Title>
       <Image src={product.image} alt={product.name}></Image>
       <Price>Rs.{product.price}</Price>
       <Button onClick={() => onAdd(product)}>ADD TO CART</Button>
     </Container>
+
   );
 };
 

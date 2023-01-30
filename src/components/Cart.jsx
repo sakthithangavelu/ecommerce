@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
 import styled from "styled-components";
 
 const Container = styled.aside`
@@ -66,6 +67,7 @@ const Cart = (props) => {
           <Text>
             {/* <Button onClick={() => onAdd(item)}>  +  </Button> */}
             <Button onClick={() => onRemove(item)}> - </Button>
+            
           </Text>
           <TextWrapper>Rs.{item.price.toFixed(2)}</TextWrapper>
         </Wrapper>
@@ -96,8 +98,11 @@ const Cart = (props) => {
             <CButton>CHECKOUT</CButton>
           </Link>
         </Items>
+        
       )}
+      <ToastContainer/>
     </Container>
+    
   );
 };
 

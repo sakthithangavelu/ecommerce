@@ -8,6 +8,8 @@ import { basic_eye } from "react-icons-kit/linea/basic_eye";
 import { basic_eye_closed } from "react-icons-kit/linea/basic_eye_closed";
 import { arrows_exclamation } from "react-icons-kit/linea/arrows_exclamation";
 import { arrows_circle_check } from "react-icons-kit/linea/arrows_circle_check";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Container = styled.div`
   width: 100vw;
@@ -115,6 +117,12 @@ const Register = () => {
 
         const navigate = useNavigate();
 
+        const showErrorMessage = () => {
+                toast.error("Email Already Exists.!", {
+                        position: toast.POSITION.TOP_CENTER,
+                });
+        };
+
         const handleSubmit = (e) => {
                 let registerObject = { fname, lname, email, password };
                 console.log(registerObject);
@@ -122,8 +130,7 @@ const Register = () => {
                 ecommerceUrl.get("signIn?email=" + email).then((res) => {
                         if (res.data.length === 0) {
                                 console.log(res.data);
-                                ecommerceUrl
-                                        .post("SignIn", registerObject)
+                                ecommerceUrl.post("SignIn", registerObject)
                                         .then((res) => {
                                                 alert("Registered Successfully");
                                                 navigate("/SignIn");
@@ -132,7 +139,7 @@ const Register = () => {
                                                 alert("Registration Failed:" + err.message);
                                         });
                         } else {
-                                alert("Email already exist");
+                               showErrorMessage();
                         }
                 });
         };
@@ -248,6 +255,7 @@ const Register = () => {
                                         </Link>
                                 </Form>
                         </Wrapper>
+                        <ToastContainer/>
                 </Container>
         );
 };

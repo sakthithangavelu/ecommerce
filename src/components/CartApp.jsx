@@ -7,6 +7,9 @@ import Footer from "./Footer";
 import Navbar from "./Navbar";
 import ecommerceUrl from "../axios/AxiosURL";
 import styled from "styled-components";
+import { toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
+
 
 const Container = styled.div`
   text-align: center;
@@ -29,6 +32,20 @@ const CartApp = () => {
     });
   }, []);
 
+
+
+  const showToastMessage = () => {
+    toast.success('Added successfully', {
+      position: toast.POSITION.TOP_CENTER
+    });
+  };
+
+  const showErrorMessage = () => {
+    toast.error('Removed succesfully', {
+      position: toast.POSITION.TOP_CENTER
+    });
+  };
+
   const onAdd = (product) => {
     const exist = cartItems.find((x) => x.id === product.id);
     if (exist) {
@@ -40,11 +57,14 @@ const CartApp = () => {
     }
     const email = sessionStorage.getItem("email");
     ecommerceUrl.post("CartItems", { ...product, email });
+    showToastMessage();
+
   };
 
   const onRemove = (product) => {
     ecommerceUrl.delete("CartItems/" + product.id).then((resp) => {
       setCartItems(cartItems.filter((x) => x.id !== product.id));
+      showErrorMessage();
     });
   };
 

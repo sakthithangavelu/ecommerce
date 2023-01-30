@@ -62,8 +62,23 @@
       "email": "monica@aspiresys.com",
       "password": "Monica@123",
       "id": 9
+    },
+    {
+      "fname": "Pavithra",
+      "lname": "Jayavel",
+      "email": "pavithra@aspiresys.com",
+      "password": "Pavithra@123",
+      "id": 10
     }
   ],
-  "CartItems": [],
+  "CartItems": [
+    {
+      "id": "4",
+      "name": "Bosston single bed",
+      "price": 9000,
+      "image": "/assets/images/img4.jpg",
+      "email": "sakthi@aspiresys.com"
+    }
+  ],
   "UserAddress": []
 }

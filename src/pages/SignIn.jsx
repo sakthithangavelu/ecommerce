@@ -3,6 +3,8 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import ecommerceUrl from "../axios/AxiosURL";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Container = styled.div`
   width: 100vw;
@@ -47,6 +49,19 @@ const SignIn = () => {
 
         const navigate = useNavigate();
 
+        const showEmailError = () => {
+                toast.error("Invalid Email!", {
+                        position: toast.POSITION.TOP_CENTER,
+                });
+        };
+
+        const showPasswordError = () => {
+                toast.error("Invalid Password!", {
+                        position: toast.POSITION.TOP_CENTER,
+                });
+        };
+
+
         useEffect(() => {
                 sessionStorage.clear();
         }, []);
@@ -63,13 +78,13 @@ const SignIn = () => {
                                 .then((resp) => {
                                         console.log(resp);
                                         if (Object.keys(resp).length === 0) {
-                                                alert("Invalid Email");
+                                                showEmailError();
                                         } else {
                                                 if (resp[0].password === password) {
                                                         sessionStorage.setItem("email", email);
                                                         navigate("/CartApp");
                                                 } else {
-                                                        alert("Invalid Password");
+                                                        showPasswordError();
                                                 }
                                         }
                                 })
@@ -124,6 +139,7 @@ const SignIn = () => {
                                         </Link>
                                 </Form>
                         </Wrapper>
+                        <ToastContainer />
                 </Container>
         );
 };

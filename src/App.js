@@ -10,6 +10,7 @@ import Checkout from "./components/Checkout";
 import ViewOrders from "./components/ViewOrders";
 import ShopNow from "./components/ShopNow";
 
+
 const App = () => {
   return (
     <Routes>

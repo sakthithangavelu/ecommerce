@@ -109,7 +109,7 @@ const Navbar = (props) => {
                                 <MenuItem>HOME</MenuItem>
                             </Link>
                             <Link to="/Register">
-                                <MenuItem>REGISTER</MenuItem>
+                                <MenuItem>SIGN UP</MenuItem>
                             </Link>
                             <Link to="/SignIn">
                                 <MenuItem>SIGN IN</MenuItem>
