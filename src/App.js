@@ -9,7 +9,7 @@ import { Routes, Route } from "react-router-dom";
 import Checkout from "./components/Checkout";
 import ViewOrders from "./components/ViewOrders";
 import ShopNow from "./components/ShopNow";
-
+import Error from "./components/errorpage/Error";
 
 const App = () => {
   return (
@@ -22,6 +22,7 @@ const App = () => {
       <Route path="/Checkout" element={<Checkout />} />
       <Route path="/ViewOrders" element={<ViewOrders />} />
       <Route path="/ShopNow" element={<ShopNow />} />
+      <Route path="*" element={<Error />} />
     </Routes>
   );
 };

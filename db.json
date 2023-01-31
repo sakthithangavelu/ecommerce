@@ -71,14 +71,6 @@
       "id": 10
     }
   ],
-  "CartItems": [
-    {
-      "id": "4",
-      "name": "Bosston single bed",
-      "price": 9000,
-      "image": "/assets/images/img4.jpg",
-      "email": "sakthi@aspiresys.com"
-    }
-  ],
+  "CartItems": [],
   "UserAddress": []
 }

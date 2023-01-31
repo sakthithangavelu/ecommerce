@@ -61,7 +61,6 @@ const SignIn = () => {
                 });
         };
 
-
         useEffect(() => {
                 sessionStorage.clear();
         }, []);
@@ -93,6 +92,7 @@ const SignIn = () => {
                                 });
                 }
         };
+        
         const validate = () => {
                 let result = true;
                 if (email === "" || email === null) {
@@ -109,6 +109,7 @@ const SignIn = () => {
         const Signin = () => {
                 navigate("/CartApp");
         };
+
         return (
                 <Container>
                         <Wrapper>
