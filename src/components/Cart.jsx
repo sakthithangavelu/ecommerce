@@ -67,7 +67,7 @@ const Cart = (props) => {
           <Text>
             {/* <Button onClick={() => onAdd(item)}>  +  </Button> */}
             <Button onClick={() => onRemove(item)}> - </Button>
-            
+          
           </Text>
           <TextWrapper>Rs.{item.price.toFixed(2)}</TextWrapper>
         </Wrapper>

@@ -50,7 +50,7 @@ const CartApp = () => {
     const exist = cartItems.find((x) => x.id === product.id);
     if (exist) {
       setCartItems(
-        cartItems.map((x) => (x.id === product.id ? { ...exist } : x))
+        cartItems.map((x) => (x.id === product.id ? { ...exist } : x + 1))
       );
     } else {
       setCartItems([...cartItems, { ...product }]);
