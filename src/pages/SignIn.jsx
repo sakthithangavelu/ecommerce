@@ -60,7 +60,11 @@ const SignIn = () => {
                         position: toast.POSITION.TOP_CENTER,
                 });
         };
-
+        const showLoginError = (err) => {
+                toast.error("Login Failed!"+err.message, {
+                        position: toast.POSITION.TOP_CENTER,
+                });
+        };
         useEffect(() => {
                 sessionStorage.clear();
         }, []);
@@ -87,8 +91,8 @@ const SignIn = () => {
                                                 }
                                         }
                                 })
-                                .catch((err) => {
-                                        alert("Login Failed:" + err.message);
+                                .catch(() => {
+                                        showLoginError();
                                 });
                 }
         };

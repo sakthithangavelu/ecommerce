@@ -38,7 +38,7 @@ const Hr = styled.hr``;
 
 const Button = styled.button`
   background-color: teal;
-  width: 1.5rem;
+  width: 4rem;
   color: white;
 `;
 const CButton = styled.button`
@@ -66,7 +66,7 @@ const Cart = (props) => {
           <Text>{item.name}</Text>
           <Text>
             {/* <Button onClick={() => onAdd(item)}>  +  </Button> */}
-            <Button onClick={() => onRemove(item)}> - </Button>
+            <Button onClick={() => onRemove(item)}> Remove </Button>
           
           </Text>
           <TextWrapper>Rs.{item.price.toFixed(2)}</TextWrapper>

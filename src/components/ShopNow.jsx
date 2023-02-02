@@ -19,7 +19,7 @@ const Wrapper = styled.div`
 `;
 
 const showErrorMessage = () => {
-  toast.error("Please Sign In to Proceed", {
+  toast.info("Please Sign In to Proceed", {
     position: toast.POSITION.TOP_CENTER,
   });
 };
