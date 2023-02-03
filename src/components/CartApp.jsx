@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Children } from "react";
 import Main from "./Main";
 import Cart from "./Cart";
 import data from "./data";
@@ -8,8 +8,7 @@ import Navbar from "./Navbar";
 import ecommerceUrl from "../axios/AxiosURL";
 import styled from "styled-components";
 import { toast } from "react-toastify";
-import 'react-toastify/dist/ReactToastify.css';
-
+import "react-toastify/dist/ReactToastify.css";
 
 const Container = styled.div`
   text-align: center;
@@ -27,22 +26,21 @@ const CartApp = () => {
 
   useEffect(() => {
     const email = sessionStorage.getItem("email");
+    console.log(email);
     ecommerceUrl.get("CartItems?email=" + email).then((res) => {
       setCartItems(res.data);
     });
   }, []);
 
-
-
   const showToastMessage = () => {
-    toast.success('Added successfully', {
-      position: toast.POSITION.TOP_CENTER
+    toast.success("Added successfully", {
+      position: toast.POSITION.TOP_CENTER,
     });
   };
 
   const showErrorMessage = () => {
-    toast.error('Removed succesfully', {
-      position: toast.POSITION.TOP_CENTER
+    toast.error("Removed succesfully", {
+      position: toast.POSITION.TOP_CENTER,
     });
   };
 
@@ -58,7 +56,6 @@ const CartApp = () => {
     const email = sessionStorage.getItem("email");
     ecommerceUrl.post("CartItems", { ...product, email });
     showToastMessage();
-
   };
 
   const onRemove = (product) => {

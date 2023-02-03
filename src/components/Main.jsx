@@ -21,7 +21,7 @@ const Title = styled.h2`
 `;
 
 const Main = (props) => {
-  const { products, onAdd } = props;
+  const { products , onAdd } = props;
   return (
     <Container>
       <Title>FURNITURES</Title>
