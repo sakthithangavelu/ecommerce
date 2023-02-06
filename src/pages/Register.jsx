@@ -75,7 +75,6 @@ const Register = () => {
         const [email, emailChange] = useState("");
         const [password, passwordChange] = useState("");
         const [type, setType] = useState("password");
-        // validated states
         const [lowerValidated, setLowerValidated] = useState(false);
         const [upperValidated, setUpperValidated] = useState(false);
         const [numberValidated, setNumberValidated] = useState(false);

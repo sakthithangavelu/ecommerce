@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 const Container = styled.div``;
 const Title = styled.h3`
@@ -24,14 +25,12 @@ const Image = styled.img`
 const Product = (props) => {
   const { product, onAdd } = props;
   return (
-
     <Container>
       <Title>{product.name}</Title>
-      <Image src={product.image} alt={product.name}></Image>
+      <Link to={`/Products/${product.id}`}><Image src={product.image} alt={product.name}></Image></Link>
       <Price>Rs.{product.price}</Price>
       <Button onClick={() => onAdd(product)}>ADD TO CART</Button>
     </Container>
-
   );
 };
 
