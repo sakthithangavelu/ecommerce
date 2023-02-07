@@ -1,4 +1,4 @@
-import React, { useState, useEffect, Children } from "react";
+import React, { useState, useEffect } from "react";
 import Main from "./Main";
 import Cart from "./Cart";
 import data from "./data";
@@ -48,14 +48,17 @@ const CartApp = () => {
     const exist = cartItems.find((x) => x.id === product.id);
     if (exist) {
       setCartItems(
-        cartItems.map((x) => (x.id === product.id ? { ...exist } : x + 1))
+        cartItems.map((x) =>
+          x.id === product.id ? { ...exist, qty: exist.qty + 1 } : x
+        )
       );
     } else {
-      setCartItems([...cartItems, { ...product }]);
+      setCartItems([...cartItems, { ...product, qty: 1 }]);
     }
     const email = sessionStorage.getItem("email");
-    ecommerceUrl.post("CartItems", { ...product, email });
+    ecommerceUrl.post("CartItems", { ...product, email, qty:1});
     showToastMessage();
+    
   };
 
   const onRemove = (product) => {

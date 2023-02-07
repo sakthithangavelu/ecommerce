@@ -50,9 +50,8 @@ const CButton = styled.button`
 `;
 
 const Cart = (props) => {
-  // const { cartItems, onAdd, onRemove } = props;
-  const { cartItems, onRemove } = props;
-  const itemsPrice = cartItems.reduce((a, c) => a + c.price, 0);
+  const { cartItems, onAdd, onRemove } = props;
+  const itemsPrice = cartItems.reduce((a, c) => a + c.price * c.qty, 0);
   const taxPrice = itemsPrice * 0.18;
   const shippingPrice = itemsPrice > 9999 ? 0 : 300;
   const totalPrice = itemsPrice + taxPrice + shippingPrice;
@@ -65,11 +64,11 @@ const Cart = (props) => {
         <Wrapper key={item.id}>
           <Text>{item.name}</Text>
           <Text>
-            {/* <Button onClick={() => onAdd(item)}>  +  </Button> */}
-            <Button onClick={() => onRemove(item)}> Remove </Button>
+            <Button onClick={() => onAdd(item)}>  +  </Button>
+            <Button onClick={() => onRemove(item)}> - </Button>
           
           </Text>
-          <TextWrapper>Rs.{item.price.toFixed(2)}</TextWrapper>
+          <TextWrapper>{item.qty} * Rs.{item.price.toFixed(2)}</TextWrapper>
         </Wrapper>
       ))}
       {cartItems.length !== 0 && (

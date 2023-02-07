@@ -75,8 +75,9 @@ const ViewOrders = () => {
                         <Image src={item.image} />
                         <InfoContainer>
                             <P>User Id :{item.email}</P>
-                            <P>Product Price : Rs.{item.price}/-</P>
                             <P>Product name : {item.name}</P>
+                            <P>Quantity : {item.qty}</P>
+                            <P>Product Price : Rs.{item.price}/-</P>
                             {myAddress.map((address) => (
                                 <AddressContainer>
                                     <P>
@@ -85,6 +86,7 @@ const ViewOrders = () => {
                                     </P>
                                     <P>Postcode : {address.postcode}</P>
                                     <P>Contact : {address.phone}</P>
+                
                                 </AddressContainer>
                             ))}
                         </InfoContainer>
