@@ -5,8 +5,8 @@ import Announcement from "./Announcement";
 import Footer from "./Footer";
 import Navbar from "./Navbar";
 import styled from "styled-components";
-import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { showSignInMessage } from "../services/Toastify";
 
 const Container = styled.div`
   text-align: center;
@@ -17,12 +17,6 @@ const Wrapper = styled.div`
   padding: 18px;
   justify-content: space-between;
 `;
-
-const showErrorMessage = () => {
-  toast.info("Please Sign In to Proceed", {
-    position: toast.POSITION.TOP_CENTER,
-  });
-};
 
 const ShopNow = () => {
   const { products } = data;
@@ -37,7 +31,7 @@ const ShopNow = () => {
     } else {
       setCartItems([...cartItems, { ...product }]);
     }
-    showErrorMessage();
+    showSignInMessage();
   };
 
   return (
@@ -46,7 +40,6 @@ const ShopNow = () => {
       <Navbar countCartItems={""} />
       <Wrapper>
         <Main onAdd={onAdd} products={products}></Main>
-        <ToastContainer />
         <Footer />
       </Wrapper>
     </Container>

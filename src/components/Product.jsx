@@ -27,7 +27,9 @@ const Product = (props) => {
   return (
     <Container>
       <Title>{product.name}</Title>
-      <Link to={`/Products/${product.id}`}><Image src={product.image} alt={product.name}></Image></Link>
+      <Link to={`/Products/${product.id}`}>
+        <Image src={product.image} alt={product.name}></Image>
+      </Link>
       <Price>Rs.{product.price}</Price>
       <Button onClick={() => onAdd(product)}>ADD TO CART</Button>
     </Container>

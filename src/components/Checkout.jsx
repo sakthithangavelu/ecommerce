@@ -4,8 +4,9 @@ import Navbar from "./Navbar";
 import Footer from "./Footer";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-import ecommerceUrl from "../axios/AxiosURL";
+import ecommerceUrl from "../services/AxiosURL";
 import styled from "styled-components";
+import { showOrderFailed, showOrderSuccess } from "../services/Toastify";
 
 const Container = styled.div`
   width: 99.2vw;
@@ -26,8 +27,7 @@ const Title = styled.h1`
   font-size: 24px;
   font-weight: 3000;
 `;
-const Cod = styled.h4` 
-`;
+const Cod = styled.h4``;
 const Form = styled.form``;
 const Input = styled.input`
   flex: 1;
@@ -60,11 +60,11 @@ const Checkout = () => {
     ecommerceUrl
       .post("UserAddress", checkoutObject)
       .then((res) => {
-        alert("Order sucessfully placed");
         navigate("/ViewOrders");
+        showOrderSuccess();
       })
-      .catch((err) => {
-        alert("Order Failed:" + err.message);
+      .catch(() => {
+        showOrderFailed();
       });
   };
   return (

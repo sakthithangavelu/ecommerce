@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Announcement from "./Announcement";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
-import ecommerceUrl from "../axios/AxiosURL";
+import ecommerceUrl from "../services/AxiosURL";
 import styled from "styled-components";
 
 const Container = styled.div``;
@@ -38,63 +38,62 @@ const P = styled.p`
 const AddressContainer = styled.div``;
 
 const ViewOrders = () => {
-    const [cartItems, setCartItems] = useState([]);
-    const [userAddress, setUserAddress] = useState([]);
+  const [cartItems, setCartItems] = useState([]);
+  const [userAddress, setUserAddress] = useState([]);
 
-    const email = sessionStorage.getItem("email");
-    useEffect(() => {
-        ecommerceUrl.get("CartItems").then((res) => {
-            ecommerceUrl.get("UserAddress").then((res) => {
-                setUserAddress(res.data);
-            });
-            setCartItems(res.data);
-        });
-    }, []);
+  const email = sessionStorage.getItem("email");
+  useEffect(() => {
+    ecommerceUrl.get("CartItems").then((res) => {
+      ecommerceUrl.get("UserAddress").then((res) => {
+        setUserAddress(res.data);
+      });
+      setCartItems(res.data);
+    });
+  }, []);
 
-    const myCart = cartItems.filter((item) => {
-        if (item.email === email) {
-            return item;
-        } else {
-            return false;
-        }
-    });
-    const myAddress = userAddress.filter((address) => {
-        if (address.email === email) {
-            return address;
-        } else {
-            return false;
-        }
-    });
-    return (
-        <Container>
-            <Announcement />
-            <Navbar />
-            <Wrapper>
-                {myCart.map((item) => (
-                    <DetailsContainer>
-                        <Image src={item.image} />
-                        <InfoContainer>
-                            <P>User Id :{item.email}</P>
-                            <P>Product name : {item.name}</P>
-                            <P>Quantity : {item.qty}</P>
-                            <P>Product Price : Rs.{item.price}/-</P>
-                            {myAddress.map((address) => (
-                                <AddressContainer>
-                                    <P>
-                                        Address : {address.address1}
-                                        {address.address2}
-                                    </P>
-                                    <P>Postcode : {address.postcode}</P>
-                                    <P>Contact : {address.phone}</P>
-                
-                                </AddressContainer>
-                            ))}
-                        </InfoContainer>
-                    </DetailsContainer>
-                ))}
-            </Wrapper>
-            <Footer />
-        </Container>
-    );
+  const myCart = cartItems.filter((item) => {
+    if (item.email === email) {
+      return item;
+    } else {
+      return false;
+    }
+  });
+  const myAddress = userAddress.filter((address) => {
+    if (address.email === email) {
+      return address;
+    } else {
+      return false;
+    }
+  });
+  return (
+    <Container>
+      <Announcement />
+      <Navbar />
+      <Wrapper>
+        {myCart.map((item) => (
+          <DetailsContainer>
+            <Image src={item.image} />
+            <InfoContainer>
+              <P>User Id :{item.email}</P>
+              <P>Product name : {item.name}</P>
+              <P>Quantity : {item.qty}</P>
+              <P>Product Price : Rs.{item.price}/-</P>
+              {myAddress.map((address) => (
+                <AddressContainer>
+                  <P>
+                    Address : {address.address1}
+                    {address.address2}
+                  </P>
+                  <P>Postcode : {address.postcode}</P>
+                  <P>Contact : {address.phone}</P>
+                </AddressContainer>
+              ))}
+            </InfoContainer>
+          </DetailsContainer>
+        ))}
+      </Wrapper>
+      <Footer />
+    </Container>
+  );
 };
 export default ViewOrders;

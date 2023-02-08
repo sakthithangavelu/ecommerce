@@ -13,9 +13,12 @@ import Error from "./components/errorpage/Error";
 import ProtectedRoute from "./pages/Protected";
 import SingleProduct from "./components/detailsPage/SingleProduct";
 import DetailsLayout from "./components/detailsPage/DetailsLayout";
+import { ToastContainer } from "react-toastify";
 
 const App = () => {
   return (
+    <>
+    <ToastContainer/>
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/Register" element={<Register />} />
@@ -29,6 +32,8 @@ const App = () => {
       <Route path="products" element={<DetailsLayout />}>
       <Route path=":productId" element={<SingleProduct />} /></Route>
     </Routes>
+    </>
+
   );
 };
 

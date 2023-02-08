@@ -1,11 +1,11 @@
 import styled from "styled-components";
 import {
-        Facebook,
-        Twitter,
-        Instagram,
-        Place,
-        Call,
-        Email,
+  Facebook,
+  Twitter,
+  Instagram,
+  Place,
+  Call,
+  Email,
 } from "@mui/icons-material";
 
 const Container = styled.div`
@@ -46,43 +46,43 @@ const ContactItem = styled.div`
 `;
 
 const Footer = () => {
-        return (
-                <Container>
-                        <Left>
-                                <Logo>BrOwN WoOdS</Logo>
-                                <Desc>
-                                        We specialize in the manufacture of household furniture,outdoor and
-                                        office furniture.We use the very best materials available including
-                                        teak woods.
-                                </Desc>
-                                <SocialContainer>
-                                        <SocialIcon>
-                                                <Instagram />
-                                        </SocialIcon>
-                                        <SocialIcon>
-                                                <Facebook />
-                                        </SocialIcon>
-                                        <SocialIcon>
-                                                <Twitter />
-                                        </SocialIcon>
-                                </SocialContainer>
-                        </Left>
-                        <Right>
-                                <Title>Contact</Title>
-                                <ContactItem>
-                                        <Place /> No:291,2nd main road,Siruseri,Chennai - 600 130
-                                </ContactItem>
-                                <ContactItem>
-                                        <Call />
-                                        +91 97654 78218
-                                </ContactItem>
-                                <ContactItem>
-                                        <Email />
-                                        reachus@brownwoods.com
-                                </ContactItem>
-                        </Right>
-                </Container>
-        );
+  return (
+    <Container>
+      <Left>
+        <Logo>BrOwN WoOdS</Logo>
+        <Desc>
+          We specialize in the manufacture of household furniture,outdoor and
+          office furniture.We use the very best materials available including
+          teak woods.
+        </Desc>
+        <SocialContainer>
+          <SocialIcon>
+            <Instagram />
+          </SocialIcon>
+          <SocialIcon>
+            <Facebook />
+          </SocialIcon>
+          <SocialIcon>
+            <Twitter />
+          </SocialIcon>
+        </SocialContainer>
+      </Left>
+      <Right>
+        <Title>Contact</Title>
+        <ContactItem>
+          <Place /> No:291,2nd main road,Siruseri,Chennai - 600 130
+        </ContactItem>
+        <ContactItem>
+          <Call />
+          +91 97654 78218
+        </ContactItem>
+        <ContactItem>
+          <Email />
+          reachus@brownwoods.com
+        </ContactItem>
+      </Right>
+    </Container>
+  );
 };
 
 export default Footer;

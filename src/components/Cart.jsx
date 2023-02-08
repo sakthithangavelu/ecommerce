@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { ToastContainer } from "react-toastify";
 import styled from "styled-components";
 
 const Container = styled.aside`
@@ -51,6 +50,8 @@ const CButton = styled.button`
 
 const Cart = (props) => {
   const { cartItems, onAdd, onRemove } = props;
+  // const { cartItems, onAdd,onRem, onRemove } = props;
+
   const itemsPrice = cartItems.reduce((a, c) => a + c.price * c.qty, 0);
   const taxPrice = itemsPrice * 0.18;
   const shippingPrice = itemsPrice > 9999 ? 0 : 300;
@@ -64,11 +65,14 @@ const Cart = (props) => {
         <Wrapper key={item.id}>
           <Text>{item.name}</Text>
           <Text>
-            <Button onClick={() => onAdd(item)}>  +  </Button>
-            <Button onClick={() => onRemove(item)}> - </Button>
-          
+            <Button onClick={() => onAdd(item)}> + </Button>
+            {/* <Button onClick={() => onRem(item)}> - </Button> */}
+            <Button onClick={() => onRemove(item)}> Delete </Button>
+
           </Text>
-          <TextWrapper>{item.qty} * Rs.{item.price.toFixed(2)}</TextWrapper>
+          <TextWrapper>
+            {item.qty} * Rs.{item.price.toFixed(2)}
+          </TextWrapper>
         </Wrapper>
       ))}
       {cartItems.length !== 0 && (
@@ -97,11 +101,8 @@ const Cart = (props) => {
             <CButton>CHECKOUT</CButton>
           </Link>
         </Items>
-        
       )}
-      <ToastContainer/>
     </Container>
-    
   );
 };
 

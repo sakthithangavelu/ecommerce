@@ -49,77 +49,77 @@ const Button = styled.button`
 `;
 
 const Navbar = (props) => {
-    const auth = sessionStorage.getItem("email");
-    const { countCartItems } = props;
-    return (
-        <div>
-            {auth ? (
-                <Container>
-                    <Wrapper>
-                        <Left>
-                            <Link to="/CartApp">
-                                <Badge
-                                    badgeContent={
-                                        countCartItems ? <Button>{countCartItems}</Button> : ""
-                                    }
-                                >
-                                    <ShoppingCartOutlined />
-                                </Badge>
-                            </Link>
-                        </Left>
+  const auth = sessionStorage.getItem("email");
+  const { countCartItems } = props;
+  return (
+    <div>
+      {auth ? (
+        <Container>
+          <Wrapper>
+            <Left>
+              <Link to="/CartApp">
+                <Badge
+                  badgeContent={
+                    countCartItems ? <Button>{countCartItems}</Button> : ""
+                  }
+                >
+                  <ShoppingCartOutlined />
+                </Badge>
+              </Link>
+            </Left>
 
-                        <Center>
-                            <Logo>BrOwN WoOdS</Logo>
-                        </Center>
+            <Center>
+              <Logo>BrOwN WoOdS</Logo>
+            </Center>
 
-                        <Right>
-                            <Link to="/">
-                                <MenuItem>HOME</MenuItem>
-                            </Link>
-                            <Link to="/ViewOrders">
-                                <MenuItem>MY ORDERS</MenuItem>
-                            </Link>
-                            <Link to="/SignIn">
-                                <MenuItem>SIGN OUT</MenuItem>
-                            </Link>
-                        </Right>
-                    </Wrapper>
-                </Container>
-            ) : (
-                <Container>
-                    <Wrapper>
-                        <Left>
-                            <Link to="/SignIn">
-                                <Badge
-                                    badgeContent={
-                                        countCartItems ? <Button>{countCartItems}</Button> : " "
-                                    }
-                                >
-                                    <ShoppingCartOutlined />
-                                </Badge>
-                            </Link>
-                        </Left>
+            <Right>
+              <Link to="/">
+                <MenuItem>HOME</MenuItem>
+              </Link>
+              <Link to="/ViewOrders">
+                <MenuItem>MY ORDERS</MenuItem>
+              </Link>
+              <Link to="/SignIn">
+                <MenuItem>SIGN OUT</MenuItem>
+              </Link>
+            </Right>
+          </Wrapper>
+        </Container>
+      ) : (
+        <Container>
+          <Wrapper>
+            <Left>
+              <Link to="/SignIn">
+                <Badge
+                  badgeContent={
+                    countCartItems ? <Button>{countCartItems}</Button> : " "
+                  }
+                >
+                  <ShoppingCartOutlined />
+                </Badge>
+              </Link>
+            </Left>
 
-                        <Center>
-                            <Logo>BrOwN WoOdS</Logo>
-                        </Center>
+            <Center>
+              <Logo>BrOwN WoOdS</Logo>
+            </Center>
 
-                        <Right>
-                            <Link to="/">
-                                <MenuItem>HOME</MenuItem>
-                            </Link>
-                            <Link to="/Register">
-                                <MenuItem>SIGN UP</MenuItem>
-                            </Link>
-                            <Link to="/SignIn">
-                                <MenuItem>SIGN IN</MenuItem>
-                            </Link>
-                        </Right>
-                    </Wrapper>
-                </Container>
-            )}
-        </div>
-    );
+            <Right>
+              <Link to="/">
+                <MenuItem>HOME</MenuItem>
+              </Link>
+              <Link to="/Register">
+                <MenuItem>SIGN UP</MenuItem>
+              </Link>
+              <Link to="/SignIn">
+                <MenuItem>SIGN IN</MenuItem>
+              </Link>
+            </Right>
+          </Wrapper>
+        </Container>
+      )}
+    </div>
+  );
 };
 
 export default Navbar;

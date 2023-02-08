@@ -5,10 +5,9 @@ import data from "./data";
 import Announcement from "./Announcement";
 import Footer from "./Footer";
 import Navbar from "./Navbar";
-import ecommerceUrl from "../axios/AxiosURL";
+import ecommerceUrl from "../services/AxiosURL";
 import styled from "styled-components";
-import { toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import { showRemoveMessage, showToastMessage } from "../services/Toastify";
 
 const Container = styled.div`
   text-align: center;
@@ -32,18 +31,6 @@ const CartApp = () => {
     });
   }, []);
 
-  const showToastMessage = () => {
-    toast.success("Added successfully", {
-      position: toast.POSITION.TOP_CENTER,
-    });
-  };
-
-  const showErrorMessage = () => {
-    toast.error("Removed succesfully", {
-      position: toast.POSITION.TOP_CENTER,
-    });
-  };
-
   const onAdd = (product) => {
     const exist = cartItems.find((x) => x.id === product.id);
     if (exist) {
@@ -56,15 +43,27 @@ const CartApp = () => {
       setCartItems([...cartItems, { ...product, qty: 1 }]);
     }
     const email = sessionStorage.getItem("email");
-    ecommerceUrl.post("CartItems", { ...product, email, qty:1});
+    ecommerceUrl.post("CartItems", { ...product, email, qty: 1 });
     showToastMessage();
-    
   };
 
+  // const onRem = (product)=> {
+  //   const exist = cartItems.find((x)=> x.id === product.id);
+  //   if(exist.qty===1) {
+  //     setCartItems(cartItems.filter((x)=>x.id !==product.id));
+  //   }else{
+  //     setCartItems(
+  //       cartItems.map((x) =>
+  //        x.id===product.id ? {...exist,qty: exist.qty -1}:x
+  //       ));
+
+  //   }
+  // }
+
   const onRemove = (product) => {
-    ecommerceUrl.delete("CartItems/" + product.id).then((resp) => {
+    ecommerceUrl.put("CartItems/" + product.id).then((resp) => {
       setCartItems(cartItems.filter((x) => x.id !== product.id));
-      showErrorMessage();
+      showRemoveMessage();
     });
   };
 
@@ -76,6 +75,7 @@ const CartApp = () => {
         <Main onAdd={onAdd} products={products}></Main>
         <Cart
           onAdd={onAdd}
+          // onRem={onRem}
           onRemove={onRemove}
           cartItems={cartItems}
           countCartItems={cartItems.length}
