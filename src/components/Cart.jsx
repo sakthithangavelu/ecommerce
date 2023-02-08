@@ -37,7 +37,8 @@ const Hr = styled.hr``;
 
 const Button = styled.button`
   background-color: teal;
-  width: 4rem;
+  width: 3.4rem;
+
   color: white;
 `;
 const CButton = styled.button`
@@ -45,12 +46,12 @@ const CButton = styled.button`
   color: white;
   padding: 10px;
   cursor: pointer;
-  width: 7.5rem;
+  width: 6.5rem;
 `;
 
 const Cart = (props) => {
-  const { cartItems, onAdd, onRemove } = props;
-  // const { cartItems, onAdd,onRem, onRemove } = props;
+  // const { cartItems, onAdd, onRemove } = props;
+  const { cartItems, onAdd, onRem, onRemove } = props;
 
   const itemsPrice = cartItems.reduce((a, c) => a + c.price * c.qty, 0);
   const taxPrice = itemsPrice * 0.18;
@@ -66,9 +67,8 @@ const Cart = (props) => {
           <Text>{item.name}</Text>
           <Text>
             <Button onClick={() => onAdd(item)}> + </Button>
-            {/* <Button onClick={() => onRem(item)}> - </Button> */}
+            <Button onClick={() => onRem(item)}> - </Button>
             <Button onClick={() => onRemove(item)}> Delete </Button>
-
           </Text>
           <TextWrapper>
             {item.qty} * Rs.{item.price.toFixed(2)}
@@ -77,6 +77,7 @@ const Cart = (props) => {
       ))}
       {cartItems.length !== 0 && (
         <Items>
+          <Hr />
           <Wrapper>
             <Text>Items Price -</Text>
             <Price>Rs.{itemsPrice.toFixed(2)}</Price>

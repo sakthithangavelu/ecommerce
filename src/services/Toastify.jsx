@@ -1,5 +1,6 @@
 import "react-toastify/dist/ReactToastify.css";
 import { toast } from "react-toastify";
+import swal from "sweetalert";
 
 export const showErrorMessage = () => {
   toast.error("Email Already Exists.!", {
@@ -23,11 +24,6 @@ export const showEmailError = () => {
 };
 export const showAdminSuccess = () => {
   toast.success("Welcome Admin", {
-    position: toast.POSITION.TOP_CENTER,
-  });
-};
-export const showUserSuccess = () => {
-  toast.success("Login Success", {
     position: toast.POSITION.TOP_CENTER,
   });
 };
@@ -67,9 +63,7 @@ export const showRemoveMessage = () => {
   });
 };
 export const showOrderSuccess = () => {
-  toast.success("Order Placed successfully", {
-    position: toast.POSITION.TOP_CENTER,
-  });
+  swal("Order Placed!", "Thank you and Have a nice day", "success");
 };
 export const showOrderFailed = (err) => {
   toast.error("Order Failed:" + err.message, {

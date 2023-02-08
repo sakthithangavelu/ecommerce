@@ -47,21 +47,21 @@ const CartApp = () => {
     showToastMessage();
   };
 
-  // const onRem = (product)=> {
-  //   const exist = cartItems.find((x)=> x.id === product.id);
-  //   if(exist.qty===1) {
-  //     setCartItems(cartItems.filter((x)=>x.id !==product.id));
-  //   }else{
-  //     setCartItems(
-  //       cartItems.map((x) =>
-  //        x.id===product.id ? {...exist,qty: exist.qty -1}:x
-  //       ));
-
-  //   }
-  // }
+  const onRem = (product) => {
+    const exist = cartItems.find((x) => x.id === product.id);
+    if (exist.qty === 1) {
+      setCartItems(cartItems.filter((x) => x.id !== product.id));
+    } else {
+      setCartItems(
+        cartItems.map((x) =>
+          x.id === product.id ? { ...exist, qty: exist.qty - 1 } : x
+        )
+      );
+    }
+  };
 
   const onRemove = (product) => {
-    ecommerceUrl.put("CartItems/" + product.id).then((resp) => {
+    ecommerceUrl.delete("CartItems/" + product.id).then((resp) => {
       setCartItems(cartItems.filter((x) => x.id !== product.id));
       showRemoveMessage();
     });
@@ -75,7 +75,7 @@ const CartApp = () => {
         <Main onAdd={onAdd} products={products}></Main>
         <Cart
           onAdd={onAdd}
-          // onRem={onRem}
+          onRem={onRem}
           onRemove={onRemove}
           cartItems={cartItems}
           countCartItems={cartItems.length}

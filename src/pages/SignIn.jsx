@@ -3,6 +3,8 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import ecommerceUrl from "../services/AxiosURL";
+import { toast } from "react-toastify";
+
 import {
   showEmailError,
   showPasswordError,
@@ -10,7 +12,6 @@ import {
   showPassError,
   showUsernameError,
   showAdminSuccess,
-  showUserSuccess,
 } from "../services/Toastify";
 
 const Container = styled.div`
@@ -59,6 +60,12 @@ const SignIn = () => {
   useEffect(() => {
     sessionStorage.clear();
   }, []);
+
+  const showUserSuccess = () => {
+    toast.success(`Signed In as-${email}`, {
+      position: toast.POSITION.TOP_CENTER,
+    });
+  };
 
   const ProceedLogin = (e) => {
     if (validate()) {
