@@ -85,34 +85,10 @@
       "id": 12
     }
   ],
-  "CartItems": [],
+  "CartItems": [
+    
+  ],
   "UserAddress": [
-    {
-      "name": "kw",
-      "email": "sakthi@aspiresys.com",
-      "address1": "Sa",
-      "address2": "a",
-      "postcode": "3",
-      "phone": "65434542345",
-      "id": 1
-    },
-    {
-      "name": "d",
-      "email": "dmf@2kn.xs",
-      "address1": "fefge",
-      "address2": "wegeljn",
-      "postcode": "304985",
-      "phone": "098765456787654",
-      "id": 2
-    },
-    {
-      "name": "ffe",
-      "email": "afh@rjwjof.cvodvn",
-      "address1": "e",
-      "address2": "33",
-      "postcode": "33",
-      "phone": "230495u439489394",
-      "id": 3
-    }
+    
   ]
 }
