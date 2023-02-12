@@ -14,6 +14,9 @@ import ProtectedRoute from "./pages/Protected";
 import SingleProduct from "./components/detailsPage/SingleProduct";
 import DetailsLayout from "./components/detailsPage/DetailsLayout";
 import { ToastContainer } from "react-toastify";
+import AddUser from './adminPages/AddUser';
+import AdminHome from './adminPages/AdminHome';
+import EditUser from './adminPages/EditUser';
 
 const App = () => {
   return (
@@ -28,9 +31,12 @@ const App = () => {
       <Route path="/Checkout" element={<ProtectedRoute><Checkout /></ProtectedRoute>} />
       <Route path="/ViewOrders" element={<ProtectedRoute><ViewOrders /></ProtectedRoute>} />
       <Route path="/ShopNow" element={<ShopNow />} />
-      <Route path="*" element={<Error />} />
       <Route path="products" element={<DetailsLayout />}>
       <Route path=":productId" element={<SingleProduct />} /></Route>
+      <Route path="/AdminHome" element={<ProtectedRoute><AdminHome /></ProtectedRoute>} />
+      <Route path="/AddUser" element={<ProtectedRoute><AddUser /></ProtectedRoute>} />
+      <Route path="/EditUser/:id" element={<ProtectedRoute><EditUser /></ProtectedRoute>} />
+      <Route path="*" element={<Error />} />
     </Routes>
     </>
 

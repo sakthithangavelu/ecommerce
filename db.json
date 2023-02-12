@@ -57,10 +57,10 @@
       "id": 8
     },
     {
-      "fname": "Monica",
-      "lname": "Krish",
-      "email": "monica@aspiresys.com",
-      "password": "Monica@123",
+      "fname": "Subash",
+      "lname": "Kannan",
+      "email": "subash@aspiresys.com",
+      "password": "Subash@123",
       "id": 9
     },
     {
@@ -71,13 +71,6 @@
       "id": 10
     },
     {
-      "fname": "Sam",
-      "lname": "Austin",
-      "email": "sam@aspiresys.com",
-      "password": "Sam@1234",
-      "id": 11
-    },
-    {
       "fname": "Admin",
       "lname": "Aspire",
       "email": "admin@aspiresys.com",
@@ -85,10 +78,6 @@
       "id": 12
     }
   ],
-  "CartItems": [
-    
-  ],
-  "UserAddress": [
-    
-  ]
+  "CartItems": [],
+  "UserAddress": []
 }

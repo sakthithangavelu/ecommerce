@@ -84,7 +84,7 @@ const SignIn = () => {
             if (resp[0].password === "Admin@123") {
               sessionStorage.setItem("email", email);
               showAdminSuccess();
-              navigate("/ViewOrders");
+              navigate("/AdminHome");
             } else {
               if (resp[0].password === password) {
                 sessionStorage.setItem("email", email);
