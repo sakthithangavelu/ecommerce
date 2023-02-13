@@ -6,16 +6,14 @@ import TableCell, { tableCellClasses } from "@mui/material/TableCell";
 import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
-import { toast } from "react-toastify";
 import Paper from "@mui/material/Paper";
 import { useSelector, useDispatch } from "react-redux";
 import { deleteUser, loadUsers } from "../redux/actions";
 import Button from "@mui/material/Button";
 import ButtonGroup from "@mui/material/ButtonGroup";
 import { useNavigate } from "react-router-dom";
-import Navbar from "../components/Navbar";
-
-
+import AdminNav from "./AdminNav";
+import { removeUserAlert } from "../services/Toastify";
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -31,16 +29,7 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
   "&:nth-of-type(odd)": {
     backgroundColor: theme.palette.action.hover,
   },
-  // hide last border
-  "&:last-child td, &:last-child th": {
-    border: 0,
-  },
 }));
-// export const removeUserAlert = () => {
-//   toast.error("Are you sure you want to delete the user?", {
-//     position: toast.POSITION.TOP_CENTER,
-//   });
-// };
 
 const AdminHome = () => {
   let dispatch = useDispatch();
@@ -53,48 +42,32 @@ const AdminHome = () => {
   }, []);
 
   const handleDelete = (id) => {
-    if (window.confirm("Are you sure you want to delete the user?")) {
-      dispatch(deleteUser(id));
+    if (removeUserAlert(dispatch(deleteUser(id)))) {
     }
   };
 
   return (
     <div>
-      <Navbar />
+      <AdminNav />
       <br />
       <h3 style={{ textAlign: "center" }}>ADMIN PAGE</h3>
       <Button
         onClick={() => navigate("/addUser")}
         variant="contained"
-        style={{ backgroundColor: "teal" ,marginLeft: "690px"}}
+        style={{ backgroundColor: "teal", margin:"auto",display:"table" }}
       >
         ADD NEW USER
       </Button>
-      {/* <Button
-        onClick={() => navigate("/")}
-        variant="contained"
-        style={{ backgroundColor: "teal" }}
-      >
-        LOGOUT
-      </Button> */}
       <br />
       <br />
-      <TableContainer component={Paper} style={{ backgroundColor: "#c6f7ed"}}>
+      <TableContainer component={Paper} style={{ backgroundColor: "#c6f7ed" }}>
         <Table sx={{ minWidth: 700 }} aria-label="customized table">
           <TableHead>
             <TableRow>
               <StyledTableCell>First Name</StyledTableCell>
-              <StyledTableCell
-                align="center"
-              >
-                Last Name
-              </StyledTableCell>
+              <StyledTableCell align="center">Last Name</StyledTableCell>
               <StyledTableCell align="center">Email</StyledTableCell>
-              <StyledTableCell
-                align="center"
-              >
-                Password
-              </StyledTableCell>
+              <StyledTableCell align="center">Password</StyledTableCell>
               <StyledTableCell align="center">Action</StyledTableCell>
             </TableRow>
           </TableHead>

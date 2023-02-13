@@ -2,12 +2,12 @@ import React from "react";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
-import { useState, useEffect } from "react";
-import { useNavigate, useParams } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import { getSingleUser, updateUser } from "../redux/actions";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { addUser } from "../redux/actions";
 
-const EditUser = () => {
+const AddUser = () => {
   const [state, setState] = useState({
     fname: "",
     lname: "",
@@ -15,21 +15,10 @@ const EditUser = () => {
     password: "",
   });
   const [error, setError] = useState("");
-  const { id } = useParams();
-  const { SignIn } = useSelector((state) => state.data);
+
   const { fname, lname, email, password } = state;
   const Navigate = useNavigate();
   const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(getSingleUser(id));
-  }, []);
-
-  useEffect(() => {
-    if (SignIn) {
-      setState({ ...SignIn });
-    }
-  }, []);
 
   const handleInputChange = (e) => {
     let { name, value } = e.target;
@@ -41,20 +30,19 @@ const EditUser = () => {
     if (!fname || !lname || !email || !password) {
       setError("*Please fill all the input fields*");
     } else {
-      dispatch(updateUser(state, id));
+      dispatch(addUser(state));
       Navigate("/AdminHome");
       setError("");
     }
   };
 
   return (
-    <div>
-      <h2>Edit User</h2>
+    <div style={{ marginTop: "100" ,textAlign:"center"}}>
+      <h2>Add New User</h2>
       {error && <h3 style={{ color: "red" }}>{error}</h3>}
       <Box
         component="form"
         sx={{ "& > :not(style)": { m: 1, width: "50ch" } }}
-        style={{ marginTop: "100" }}
         noValidate
         autoComplete="off"
         onSubmit={handleSubmit}
@@ -64,8 +52,8 @@ const EditUser = () => {
           id="outlined-basic"
           label="First Name"
           variant="outlined"
-          value={fname || ""}
           name="fname"
+          value={fname}
           onChange={handleInputChange}
           type="text"
         />
@@ -74,8 +62,8 @@ const EditUser = () => {
           id="outlined-basic"
           label="Last Name"
           variant="outlined"
-          value={lname || ""}
           name="lname"
+          value={lname}
           onChange={handleInputChange}
           type="text"
         />
@@ -84,8 +72,8 @@ const EditUser = () => {
           id="outlined-basic"
           label="Email"
           variant="outlined"
-          value={email || ""}
           name="email"
+          value={email}
           onChange={handleInputChange}
           type="email"
         />
@@ -94,8 +82,8 @@ const EditUser = () => {
           id="outlined-basic"
           label="Password"
           variant="outlined"
-          value={password || ""}
           name="password"
+          value={password}
           onChange={handleInputChange}
           type="password"
         />
@@ -121,4 +109,4 @@ const EditUser = () => {
   );
 };
 
-export default EditUser;
+export default AddUser;

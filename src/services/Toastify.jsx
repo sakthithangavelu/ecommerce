@@ -70,3 +70,6 @@ export const showOrderFailed = (err) => {
     position: toast.POSITION.TOP_CENTER,
   });
 };
+export const removeUserAlert = () => {
+  swal("Record Deleted Successfully!", "", "success");
+};

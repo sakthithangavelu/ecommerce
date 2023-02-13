@@ -80,6 +80,7 @@ export const updateUser = (SignIn, id) => {
       .then((resp) => {
         console.log("resp", resp);
         dispatch(userUpdated());
+        dispatch(loadUsers());
       })
       .catch((error) => console.log(error));
   };
