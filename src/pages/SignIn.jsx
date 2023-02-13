@@ -138,7 +138,7 @@ const SignIn = () => {
             placeholder="Password"
             required
           />
-          <Button onSubmit={Signin} type="submit">
+          <Button onSubmit={Signin} type="submit" data-testid="button">
             SIGN IN
           </Button>
           <Link to="/Register">

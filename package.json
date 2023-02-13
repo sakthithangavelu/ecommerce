@@ -33,7 +33,7 @@
     "start": "react-scripts start",
     "server": "json-server -p 8000 --watch db.json",
     "build": "react-scripts build",
-    "test": "react-scripts test ",
+    "test": "react-scripts test --transformIgnorePatterns \"node_modules/(?!axios)/\" ",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
