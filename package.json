@@ -33,7 +33,7 @@
     "start": "react-scripts start",
     "server": "json-server -p 8000 --watch db.json",
     "build": "react-scripts build",
-    "test": "react-scripts test --transformIgnorePatterns \"node_modules/(?!axios)/\" ",
+    "test": "react-scripts test --transformIgnorePatterns \"node_modules/(?!axios)/\" --coverage",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -63,6 +63,7 @@
     "json": "^11.0.0",
     "react-bootstrap": "^2.7.0",
     "react-test-renderer": "^18.2.0",
+    "redux-mock-store": "^1.5.4",
     "server": "^1.0.38"
   }
 }

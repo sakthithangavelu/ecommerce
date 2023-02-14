@@ -129,6 +129,7 @@ const SignIn = () => {
             onChange={(e) => emailChange(e.target.value)}
             type="email"
             placeholder="Email"
+            data-testid="email-test"
             required
           />
           <Input
@@ -136,9 +137,10 @@ const SignIn = () => {
             onChange={(e) => passwordChange(e.target.value)}
             type="password"
             placeholder="Password"
+            data-testid="password-test"
             required
           />
-          <Button onSubmit={Signin} type="submit" data-testid="button">
+          <Button onSubmit={Signin} type="submit" data-testid="SignIn-button-test">
             SIGN IN
           </Button>
           <Link to="/Register">

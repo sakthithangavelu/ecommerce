@@ -54,6 +54,7 @@ const AddUser = () => {
           variant="outlined"
           name="fname"
           value={fname}
+          data-testid="fname-test"
           onChange={handleInputChange}
           type="text"
         />
@@ -64,6 +65,7 @@ const AddUser = () => {
           variant="outlined"
           name="lname"
           value={lname}
+          data-testid="lname-test"
           onChange={handleInputChange}
           type="text"
         />
@@ -74,6 +76,7 @@ const AddUser = () => {
           variant="outlined"
           name="email"
           value={email}
+          data-testid="admin-email-test"
           onChange={handleInputChange}
           type="email"
         />
@@ -84,6 +87,7 @@ const AddUser = () => {
           variant="outlined"
           name="password"
           value={password}
+          data-testid="admin-password-test"
           onChange={handleInputChange}
           type="password"
         />
@@ -92,6 +96,7 @@ const AddUser = () => {
           variant="contained"
           style={{ backgroundColor: "teal" }}
           type="submit"
+          data-testid="submit-button-test"
           onChange={handleInputChange}
         >
           SUBMIT
@@ -100,6 +105,7 @@ const AddUser = () => {
         <Button
           variant="contained"
           style={{ backgroundColor: "teal" }}
+          data-testid="back-button-test"
           onClick={() => Navigate("/AdminHome")}
         >
           BACK

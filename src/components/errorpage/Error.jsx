@@ -21,7 +21,7 @@ const Error = () => {
     <Container>
       <ImageContainer src={ErrorGif} alt="img" />
       <Content>
-        <Para>Look like you're lost.</Para>
+        <Para >Look like you're lost.</Para>
         <Para>the page you are looking for is not avaible!</Para>
         <Link href="/">Back to Home</Link>
       </Content>

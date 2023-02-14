@@ -47,7 +47,6 @@ const SingleProduct = () => {
     </Container>
   );
 
-
 };
 
 export default SingleProduct;
