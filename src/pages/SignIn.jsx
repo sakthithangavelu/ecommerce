@@ -131,7 +131,7 @@ const SignIn = () => {
             placeholder="Email"
             data-testid="email-test"
             required
-          />
+          /> 
           <Input
             value={password}
             onChange={(e) => passwordChange(e.target.value)}
@@ -144,10 +144,10 @@ const SignIn = () => {
             SIGN IN
           </Button>
           <Link to="/Register">
-            <Button>NEW USER?</Button>
+            <Button data-testid="newuser-button-test">NEW USER?</Button>
           </Link>
           <Link to="/">
-            <Button>BACK</Button>
+            <Button data-testid="signin-back-button-test">BACK</Button>
           </Link>
         </Form>
       </Wrapper>

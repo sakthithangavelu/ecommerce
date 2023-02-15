@@ -150,6 +150,7 @@ const Register = () => {
             onChange={(e) => fnameChange(e.target.value)}
             type="text"
             placeholder="First name"
+            data-testid="reg-fname-test"
             required
           />
           <Input
@@ -157,6 +158,7 @@ const Register = () => {
             onChange={(e) => lnameChange(e.target.value)}
             type="text"
             placeholder="Last name"
+            data-testid="reg-lname-test"
             required
           />
           <Input
@@ -164,6 +166,7 @@ const Register = () => {
             onChange={(e) => emailChange(e.target.value)}
             type="email"
             placeholder="Email"
+            data-testid="reg-email-test"
             pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
             title="Please enter valid email [abc@mail.com]."
             required
@@ -173,6 +176,7 @@ const Register = () => {
             type={type}
             onChange={(e) => passwordChange(e.target.value)}
             placeholder="Password"
+            data-testid="reg-password-test"
             required
           />
           {type === "password" ? (
@@ -246,9 +250,9 @@ const Register = () => {
               At least 8 characters
             </Validation>
           </TrackerBox>
-          <Button type="submit">CREATE</Button>
+          <Button type="submit" data-testid="create-button-test">CREATE</Button>
           <Link to="/">
-            <Button>BACK</Button>
+            <Button data-testid="back-button-test">BACK</Button>
           </Link>
         </Form>
       </Wrapper>

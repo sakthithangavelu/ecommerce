@@ -64,7 +64,7 @@ const EditUser = () => {
           label="First Name"
           variant="outlined"
           value={fname || ""}
-          name="fname"
+          name="fname"zz
           onChange={handleInputChange}
           type="text"
         />

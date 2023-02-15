@@ -25,4 +25,4 @@ describe("<Error/>", () => {
     const linkElement = screen.getByRole('link', { name: /Back to Home/i });
     expect(linkElement.getAttribute('href')).toBe('/');
   });
-});
+}); 

@@ -50,7 +50,6 @@ const Checkout = () => {
   const [address2, address2Change] = useState("");
   const [postcode, postcodeChange] = useState("");
   const [phone, phoneChange] = useState("");
-
   const navigate = useNavigate();
 
   const PlaceOrder = (e) => {
@@ -80,6 +79,7 @@ const Checkout = () => {
               value={name}
               onChange={(e) => nameChange(e.target.value)}
               placeholder="Name"
+              data-testid="name-test"
               required
             />
             <Input
