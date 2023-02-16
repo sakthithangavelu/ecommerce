@@ -1,5 +1,5 @@
 import React from "react";
-import Error from "../components/errorpage/Error";
+import Error from "../errorpage/Error";
 import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
 
@@ -26,3 +26,4 @@ describe("<Error/>", () => {
     expect(linkElement.getAttribute('href')).toBe('/');
   });
 }); 
+

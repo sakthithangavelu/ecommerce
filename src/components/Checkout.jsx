@@ -87,6 +87,7 @@ const Checkout = () => {
               value={email}
               onChange={(e) => emailChange(e.target.value)}
               placeholder="*Registered Email ID*"
+              data-testid="c-email-test"
               required
             />
             <Input
@@ -94,6 +95,8 @@ const Checkout = () => {
               value={address1}
               onChange={(e) => address1Change(e.target.value)}
               placeholder="House number and street name"
+              data-testid="address1-test"
+
               required
             />
             <Input
@@ -101,6 +104,7 @@ const Checkout = () => {
               value={address2}
               onChange={(e) => address2Change(e.target.value)}
               placeholder="City, State, Country"
+              data-testid="address2-test"
               required
             />
             <Input
@@ -108,6 +112,7 @@ const Checkout = () => {
               value={postcode}
               onChange={(e) => postcodeChange(e.target.value)}
               placeholder="Postcode"
+              data-testid="postcode-test"
               required
             />
             <Input
@@ -115,10 +120,11 @@ const Checkout = () => {
               value={phone}
               onChange={(e) => phoneChange(e.target.value)}
               placeholder="Mobile number"
+              data-testid="phone-test"
               required
             />
             <Cod>*Cash on delivery only available..!</Cod>
-            <Button type="submit">Place Order</Button>
+            <Button type="submit" data-testid="placeOrder-button-test">Place Order</Button>
           </Form>
         </Wrapper>
       </Container>

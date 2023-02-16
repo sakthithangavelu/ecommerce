@@ -11,3 +11,4 @@ describe("<DetailsLayout/>", () => {
     expect(contentElement).toHaveTextContent("Products Details");
   });
 });
+

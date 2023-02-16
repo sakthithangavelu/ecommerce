@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import { ShoppingCartOutlined } from "@mui/icons-material";
+import {AccountCircleOutlined,ShoppingCartOutlined} from "@mui/icons-material";
 import { Badge } from "@mui/material";
 
 const Container = styled.div`
@@ -14,13 +14,13 @@ const Wrapper = styled.div`
   justify-content: space-between;
   background-color: #e3e6e5;
 `;
-// Left Portion of Page
+// Left Portion of Nav
 const Left = styled.div`
   flex: 1;
   display: flex;
   align-items: center;
 `;
-//Center Portion of Page
+//Center Portion of Nav
 const Center = styled.div`
   flex: 1;
   text-align: center;
@@ -28,7 +28,7 @@ const Center = styled.div`
 const Logo = styled.h1`
   font-weight: bold;
 `;
-//Right Portion of Page
+//Right Portion of Nav
 const Right = styled.div`
   flex: 1;
   display: flex;
@@ -56,8 +56,14 @@ const Navbar = (props) => {
       {auth ? (
         <Container>
           <Wrapper>
+
             <Left>
-              <Link to="/CartApp">
+                <Link to="/Profile">
+                  <Badge>
+                    <AccountCircleOutlined />
+                  </Badge>
+                </Link>
+                <Link to="/CartApp">
                 <Badge
                   badgeContent={
                     countCartItems ? <Button>{countCartItems}</Button> : ""
@@ -83,9 +89,12 @@ const Navbar = (props) => {
                 <MenuItem>SIGN OUT</MenuItem>
               </Link>
             </Right>
+
           </Wrapper>
         </Container>
+
       ) : (
+
         <Container>
           <Wrapper>
             <Left>

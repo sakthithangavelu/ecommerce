@@ -9,7 +9,7 @@ import { Routes, Route } from "react-router-dom";
 import Checkout from "./components/Checkout";
 import ViewOrders from "./components/ViewOrders";
 import ShopNow from "./components/ShopNow";
-import Error from "./components/errorpage/Error";
+import Error from "./errorpage/Error";
 import ProtectedRoute from "./pages/Protected";
 import SingleProduct from "./components/detailsPage/SingleProduct";
 import DetailsLayout from "./components/detailsPage/DetailsLayout";
@@ -17,6 +17,7 @@ import { ToastContainer } from "react-toastify";
 import AddUser from './adminPages/AddUser';
 import AdminHome from './adminPages/AdminHome';
 import EditUser from './adminPages/EditUser';
+import Profile from "./pages/Profile";
 
 const App = () => {
   return (
@@ -26,6 +27,7 @@ const App = () => {
       <Route path="/" element={<Home />} />
       <Route path="/Register" element={<Register />} />
       <Route path="/SignIn" element={<SignIn />} />
+      <Route path="/Profile" element={<Profile />} />
       <Route path="/CartApp" element={<ProtectedRoute><CartApp /></ProtectedRoute>} />
       <Route path="/Cart" element={<ProtectedRoute><Cart /></ProtectedRoute>} />
       <Route path="/Checkout" element={<ProtectedRoute><Checkout /></ProtectedRoute>} />
