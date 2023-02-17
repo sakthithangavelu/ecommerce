@@ -27,15 +27,6 @@ describe("<Register/>", () => {
     expect(screen.getByTestId("reg-fname-test")).toHaveValue("Sakthivel");
 });
 
-
-describe("<Register/>", () => {
-    test("renders the given text in the register component", () => {
-      render(<MemoryRouter><Register /></MemoryRouter>);
-      const contentElement = screen.getByText("Create an account");
-      expect(contentElement).toHaveTextContent("Create an account");
-    });
-  });
-
   
 describe("<Register/>", () => {
     test("render lname input", () => {
@@ -82,6 +73,15 @@ describe("<Register/>", () => {
     expect(screen.getByTestId("reg-password-test")).toHaveValue("Sakthi@123");
 });
 
+
+describe("<Register/>", () => {
+  test("renders the given text in the register component", () => {
+    render(<MemoryRouter><Register /></MemoryRouter>);
+    const contentElement = screen.getByText("Create an account");
+    expect(contentElement).toHaveTextContent("Create an account");
+  });
+});
+
 it("test create button and validation",()=>{
     render(<MemoryRouter><Register /></MemoryRouter>);
     const buttonElement = screen.getByTestId("create-button-test");
@@ -93,5 +93,3 @@ it("test back button and validation",()=>{
     const buttonElement = screen.getByTestId("back-button-test");
     fireEvent.click(buttonElement)
 })
-
-

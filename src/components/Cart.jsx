@@ -50,9 +50,7 @@ const CButton = styled.button`
 `;
 
 const Cart = (props) => {
-  // const { cartItems, onAdd, onRemove } = props;
   const { cartItems, onAdd, onRem, onRemove } = props;
-
   const itemsPrice = cartItems.reduce((a, c) => a + c.price * c.qty, 0);
   const taxPrice = itemsPrice * 0.18;
   const shippingPrice = itemsPrice > 9999 ? 0 : 300;

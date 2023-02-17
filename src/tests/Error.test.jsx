@@ -26,4 +26,3 @@ describe("<Error/>", () => {
     expect(linkElement.getAttribute('href')).toBe('/');
   });
 }); 
-

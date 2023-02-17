@@ -52,16 +52,6 @@ export const showSignInMessage = () => {
     position: toast.POSITION.TOP_CENTER,
   });
 };
-export const showToastMessage = () => {
-  toast.success("Added successfully", {
-    position: toast.POSITION.TOP_CENTER,
-  });
-};
-export const showRemoveMessage = () => {
-  toast.error("Removed succesfully", {
-    position: toast.POSITION.TOP_CENTER,
-  });
-};
 export const showOrderSuccess = () => {
   swal("Order Placed!", "Thank you and Have a nice day", "success");
 };

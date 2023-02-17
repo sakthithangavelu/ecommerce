@@ -7,7 +7,6 @@ import Footer from "./Footer";
 import Navbar from "./Navbar";
 import ecommerceUrl from "../services/AxiosURL";
 import styled from "styled-components";
-import { showRemoveMessage, showToastMessage } from "../services/Toastify";
 
 const Container = styled.div`
   text-align: center;
@@ -44,7 +43,6 @@ const CartApp = () => {
     }
     const email = sessionStorage.getItem("email");
     ecommerceUrl.post("CartItems", { ...product, email, qty: 1 });
-    showToastMessage();
   };
 
   const onRem = (product) => {
@@ -63,7 +61,6 @@ const CartApp = () => {
   const onRemove = (product) => {
     ecommerceUrl.delete("CartItems/" + product.id).then((resp) => {
       setCartItems(cartItems.filter((x) => x.id !== product.id));
-      showRemoveMessage();
     });
   };
 

@@ -5,7 +5,6 @@ import "@testing-library/jest-dom";
 import { Provider } from "react-redux";
 import configureStore from "redux-mock-store";
 
-
 const mockedUsedNavigate = jest.fn();
 jest.mock("react-router-dom", () => ({
   ...jest.requireActual("react-router-dom"),
@@ -78,5 +77,3 @@ describe("<AddUser/>", () => {
       fireEvent.click(screen.getByTestId("back-button-test"))
     });
   });
-
-  
